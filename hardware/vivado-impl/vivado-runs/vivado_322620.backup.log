@@ -1,0 +1,98 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu May 15 21:21:23 2025
+# Process ID         : 322620
+# Current directory  : /home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs
+# Command line       : vivado -mode batch -source mmi_gen.tcl
+# Log file           : /home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/vivado.log
+# Journal file       : /home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/vivado.jou
+# Running On         : debian
+# Platform           : Debian
+# Operating System   : Debian GNU/Linux 12 (bookworm)
+# Processor Detail   : AMD Ryzen 5 3600 6-Core Processor
+# CPU Frequency      : 3176.322 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16707 MB
+# Swap memory        : 1022 MB
+# Total Virtual      : 17730 MB
+# Available Virtual  : 12476 MB
+#-----------------------------------------------------------
+source mmi_gen.tcl
+# open_checkpoint ../vivado-runs/post_route_physopt.dcp
+Command: open_checkpoint ../vivado-runs/post_route_physopt.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1460.422 ; gain = 0.000 ; free physical = 6755 ; free virtual = 11478
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1673.422 ; gain = 0.000 ; free physical = 6538 ; free virtual = 11261
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1731.297 ; gain = 1.000 ; free physical = 6470 ; free virtual = 11193
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2287.719 ; gain = 0.000 ; free physical = 5985 ; free virtual = 10708
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2287.719 ; gain = 0.000 ; free physical = 5985 ; free virtual = 10708
+Read PlaceDB: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2287.719 ; gain = 0.000 ; free physical = 5985 ; free virtual = 10708
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2287.719 ; gain = 0.000 ; free physical = 5985 ; free virtual = 10708
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2287.719 ; gain = 0.000 ; free physical = 5985 ; free virtual = 10708
+Read Physdb Files: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2287.719 ; gain = 0.000 ; free physical = 5985 ; free virtual = 10708
+Restored from archive | CPU: 0.140000 secs | Memory: 2.495461 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2287.719 ; gain = 8.906 ; free physical = 5985 ; free virtual = 10708
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2287.719 ; gain = 0.000 ; free physical = 5985 ; free virtual = 10708
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2024.2 (64-bit) build 5239630
+open_checkpoint: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2287.719 ; gain = 827.297 ; free physical = 5985 ; free virtual = 10708
+# set proc_list [split [get_cells -hierarchical -filter { NAME=~ *instr_and_data_mem/RAM_reg }] " "]
+# set proc_placement_list [split [get_property LOC [get_cells -hierarchical -filter { PRIMITIVE_TYPE=~ *bram.RAMB36* }]] " "]
+# foreach proc_item $proc_list {puts $proc_item}
+instr_and_data_mem/RAM_reg
+# set f [open "briski.mmi" w]
+# puts $f "\<\?xml version=\"1.0\" encoding=\"UTF-8\"\?\>"
+# puts $f "\<MemInfo Version=\"1\" Minor=\"0\"\>"
+# set i 0
+# foreach proc_item $proc_list {
+# puts $f "  \<Processor Endianness=\"Little\" InstPath=\"$proc_item\"\>"
+# append concatstring "    \<AddressSpace Name=\"core_" $i "_bram\" Begin=\"0\" End=\"4095\"\>"
+# puts $f $concatstring
+# set concatstring ""
+# puts $f "      \<BusBlock\>"
+# set coordinates [lindex $proc_placement_list $i]
+# set placement_parts [split $coordinates "_"]
+# set placement [lindex $placement_parts 1]
+# append concatstring "        \<BitLane MemType=\"RAMB32\" Placement=\"" $placement "\"\>"
+# puts $f $concatstring
+# set concatstring ""
+# puts $f "          \<DataWidth MSB=\"31\" LSB=\"0\"/\>"
+# puts $f "          \<AddressRange Begin=\"0\" End=\"4095\"/\>"
+# puts $f "          \<Parity ON=\"false\" NumBits=\"0\"/\>"
+# puts $f "        \</BitLane\>"
+# puts $f "      \</BusBlock\>"
+# puts $f "    \</AddressSpace\>"
+# puts $f "  \</Processor\>"
+# incr i
+# }
+# puts $f "\<Config\>"
+# puts $f "  \<Option Name=\"Part\" Val=\"xcvu9p-flga2104-2L-e\"/\>"
+# puts $f "\</Config\>"
+# puts $f "\<DRC\>"
+# puts $f "  \<Rule Name=\"RDADDRCHANGE\" Val=\"false\"/\>"
+# puts $f "\</DRC\>"
+# puts $f "\</MemInfo\>"
+# close $f
+INFO: [Common 17-206] Exiting Vivado at Thu May 15 21:21:41 2025...

@@ -1,0 +1,59 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Fri May 23 12:40:25 2025
+| Host         : debian running 64-bit Debian GNU/Linux 12 (bookworm)
+| Command      : report_clocks -file ../vivado-runs/clocks.rpt
+| Design       : core_dummy_wrapper
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Report
+
+
+Attributes
+  P: Propagated
+  G: Generated
+  A: Auto-derived
+  R: Renamed
+  V: Virtual
+  I: Inverted
+  S: Pin phase-shifted with Latency mode
+
+Clock        Period(ns)  Waveform(ns)   Attributes  Sources
+sys_clk_pin  10.000      {0.000 5.000}  P           {REFCLK_P}
+CLKFBOUT     10.000      {0.000 5.000}  P,G,A       {MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKFBOUT}
+clkout0      10.000      {0.000 5.000}  P,G,A       {MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKOUT0}
+
+
+====================================================
+Generated Clocks
+====================================================
+
+Generated Clock     : CLKFBOUT
+Master Source       : MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKIN1
+Master Clock        : sys_clk_pin
+Multiply By         : 1
+Generated Sources   : {MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKFBOUT}
+
+Generated Clock     : clkout0
+Master Source       : MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKIN1
+Master Clock        : sys_clk_pin
+Multiply By         : 1
+Generated Sources   : {MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKOUT0}
+
+
+
+====================================================
+User Uncertainty
+====================================================
+
+
+
+====================================================
+User Jitter
+====================================================
+
+

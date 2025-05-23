@@ -1,0 +1,2049 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu May 15 21:40:13 2025
+# Process ID         : 323702
+# Current directory  : /home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs
+# Command line       : vivado -mode batch -source ../compile-scripts/compile.tcl
+# Log file           : /home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/vivado.log
+# Journal file       : /home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/vivado.jou
+# Running On         : debian
+# Platform           : Debian
+# Operating System   : Debian GNU/Linux 12 (bookworm)
+# Processor Detail   : AMD Ryzen 5 3600 6-Core Processor
+# CPU Frequency      : 2723.133 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16707 MB
+# Swap memory        : 1022 MB
+# Total Virtual      : 17730 MB
+# Available Virtual  : 12468 MB
+#-----------------------------------------------------------
+source ../compile-scripts/compile.tcl
+# set MMCM_OUT_FREQ_MHZ $env(MMCM_OUT_FREQ_MHZ)
+# set NUM_PIPE_STAGES $env(NUM_PIPE_STAGES)
+# set NUM_THREADS $env(NUM_THREADS)
+# set ENABLE_BRAM_REGFILE $env(ENABLE_BRAM_REGFILE)
+# set ENABLE_ALU_DSP $env(ENABLE_ALU_DSP)
+# set ENABLE_UNIFIED_BARREL_SHIFTER $env(ENABLE_UNIFIED_BARREL_SHIFTER)
+# puts " MMCM_OUT_FREQ_MHZ: $MMCM_OUT_FREQ_MHZ"
+ MMCM_OUT_FREQ_MHZ: 500
+# puts "NUM_PIPE_STAGES: $NUM_PIPE_STAGES"
+NUM_PIPE_STAGES: 16
+# puts "NUM_THREADS: $NUM_THREADS"
+NUM_THREADS: 16
+# puts "ENABLE_BRAM_REGFILE: $ENABLE_BRAM_REGFILE"
+ENABLE_BRAM_REGFILE: true
+# puts "ENABLE_ALU_DSP: $ENABLE_ALU_DSP"
+ENABLE_ALU_DSP: true
+# puts "ENABLE_UNIFIED_BARREL_SHIFTER: $ENABLE_UNIFIED_BARREL_SHIFTER"
+ENABLE_UNIFIED_BARREL_SHIFTER: true
+# set FPGA_PART $env(FPGA_PART)
+# set TOP_RTL $env(TOP_RTL)
+# puts "TOP_RTL: $TOP_RTL"
+TOP_RTL: core_dummy_wrapper
+# set HEX_PROG $env(HEX_PROG)
+# puts "HEX_PROG: $HEX_PROG"
+HEX_PROG: "../../software/runs/sparkle-template-mandelbrot.inst"
+# set INC_DIR        "../utils"
+# set RTL_SOURCE_DIR "../../rtl"
+# set COMPILE_SCRIPTS_DIR "../compile-scripts"
+# set USR_CONSTR_DIR "../usr-constraints"
+# set outputDir ../$env(RUN_DIR)
+# set_part $FPGA_PART
+INFO: [Coretcl 2-1500] The part has been set to 'xc7a35tcpg236-1' for the current project only. Run set_part -help for more details. To evaluate different speed grades in the current design, use the set_speed_grade command, or use the open_checkpoint -part command to change the part used by an existing checkpoint design.
+set_part: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1489.195 ; gain = 28.773 ; free physical = 6718 ; free virtual = 11444
+# set time1 [clock seconds]
+# source $COMPILE_SCRIPTS_DIR/read_sources.tcl
+## read_verilog -sv [glob ${RTL_SOURCE_DIR}/*.sv]
+## read_xdc $USR_CONSTR_DIR/basys3.xdc
+# source $COMPILE_SCRIPTS_DIR/synth.tcl
+## set time_1 [clock seconds]
+## synth_design \
+##              -top ${TOP_RTL} \
+## 	     -part $FPGA_PART \
+##              -include_dirs ${INC_DIR}\
+## 	     -directive AreaOptimized_High \
+## 	     -retiming \
+## 	     -shreg_min_size 5 \
+## 	     -flatten_hierarchy rebuilt \
+## 	     -verilog_define MMCM_OUT_FREQ_MHZ=$MMCM_OUT_FREQ_MHZ \
+## 	     -verilog_define NUM_PIPE_STAGES=$NUM_PIPE_STAGES \
+## 	     -verilog_define NUM_THREADS=$NUM_THREADS \
+## 	     -verilog_define ENABLE_BRAM_REGFILE=$ENABLE_BRAM_REGFILE \
+## 	     -verilog_define ENABLE_ALU_DSP=$ENABLE_ALU_DSP \
+## 	     -verilog_define ENABLE_UNIFIED_BARREL_SHIFTER=$ENABLE_UNIFIED_BARREL_SHIFTER \
+## 	     -verilog_define HEX_PROG=$HEX_PROG 
+WARNING: [Common 17-576] 'retiming' is deprecated. Please use -global_retiming option
+Command: synth_design -top core_dummy_wrapper -part xc7a35tcpg236-1 -include_dirs ../utils -directive AreaOptimized_High -retiming -shreg_min_size 5 -flatten_hierarchy rebuilt -verilog_define MMCM_OUT_FREQ_MHZ=500 -verilog_define NUM_PIPE_STAGES=16 -verilog_define NUM_THREADS=16 -verilog_define ENABLE_BRAM_REGFILE=true -verilog_define ENABLE_ALU_DSP=true -verilog_define ENABLE_UNIFIED_BARREL_SHIFTER=true -verilog_define HEX_PROG=\"../../software/runs/sparkle-template-mandelbrot.inst\"
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 323727
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2084.348 ; gain = 426.832 ; free physical = 5933 ; free virtual = 10659
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-11067] parameter 'DWIDTH' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:13]
+WARNING: [Synth 8-11067] parameter 'IWIDTH' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:14]
+WARNING: [Synth 8-11067] parameter 'REGFILE_SIZE' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:15]
+WARNING: [Synth 8-11067] parameter 'STARTUP_ADDR' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:16]
+WARNING: [Synth 8-11067] parameter 'MEMORY_SIZE' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:17]
+WARNING: [Synth 8-11067] parameter 'ALUOP_WIDTH' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:44]
+WARNING: [Synth 8-11067] parameter 'ADD_OP' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:45]
+WARNING: [Synth 8-11067] parameter 'SUB_OP' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:46]
+WARNING: [Synth 8-11067] parameter 'OR_OP' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:47]
+WARNING: [Synth 8-11067] parameter 'AND_OP' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:48]
+WARNING: [Synth 8-11067] parameter 'XOR_OP' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:49]
+WARNING: [Synth 8-11067] parameter 'PASS_OP' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:50]
+WARNING: [Synth 8-11067] parameter 'SLT_OP' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:51]
+WARNING: [Synth 8-11067] parameter 'SLTU_OP' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:52]
+WARNING: [Synth 8-11067] parameter 'SLL_OP' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:53]
+WARNING: [Synth 8-11067] parameter 'SRL_OP' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:54]
+WARNING: [Synth 8-11067] parameter 'SRA_OP' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:55]
+WARNING: [Synth 8-11067] parameter 'SIZE' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:67]
+WARNING: [Synth 8-11067] parameter 'ADDR_WIDTH' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:68]
+WARNING: [Synth 8-11067] parameter 'COL_WIDTH' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:69]
+WARNING: [Synth 8-11067] parameter 'NB_COL' declared inside package 'riscv_pkg' shall be treated as localparam [/home/matthias/fpga_projects/BRISKI/hardware/rtl/riscv_pkg.sv:70]
+INFO: [Synth 8-11241] undeclared symbol 'ACOUT', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:371]
+INFO: [Synth 8-11241] undeclared symbol 'BCOUT', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:372]
+INFO: [Synth 8-11241] undeclared symbol 'CARRYCASCOUT', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:373]
+INFO: [Synth 8-11241] undeclared symbol 'MULTSIGNOUT', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:374]
+INFO: [Synth 8-11241] undeclared symbol 'PCOUT', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:375]
+INFO: [Synth 8-11241] undeclared symbol 'OVERFLOW', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:377]
+INFO: [Synth 8-11241] undeclared symbol 'PATTERNBDETECT', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:378]
+INFO: [Synth 8-11241] undeclared symbol 'PATTERNDETECT', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:379]
+INFO: [Synth 8-11241] undeclared symbol 'UNDERFLOW', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:380]
+INFO: [Synth 8-11241] undeclared symbol 'CARRYOUT', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:382]
+INFO: [Synth 8-11241] undeclared symbol 'ACIN', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:385]
+INFO: [Synth 8-11241] undeclared symbol 'BCIN', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:386]
+INFO: [Synth 8-11241] undeclared symbol 'CARRYCASCIN', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:387]
+INFO: [Synth 8-11241] undeclared symbol 'MULTSIGNIN', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:388]
+INFO: [Synth 8-11241] undeclared symbol 'PCIN', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:389]
+INFO: [Synth 8-11241] undeclared symbol 'CARRYINSEL', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:392]
+INFO: [Synth 8-11241] undeclared symbol 'CLK', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:393]
+INFO: [Synth 8-11241] undeclared symbol 'CARRYIN', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:400]
+INFO: [Synth 8-11241] undeclared symbol 'CEA1', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:403]
+INFO: [Synth 8-11241] undeclared symbol 'CEA2', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:404]
+INFO: [Synth 8-11241] undeclared symbol 'CEAD', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:405]
+INFO: [Synth 8-11241] undeclared symbol 'CEALUMODE', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:406]
+INFO: [Synth 8-11241] undeclared symbol 'CEB1', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:407]
+INFO: [Synth 8-11241] undeclared symbol 'CEB2', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:408]
+INFO: [Synth 8-11241] undeclared symbol 'CEC', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:409]
+INFO: [Synth 8-11241] undeclared symbol 'CECARRYIN', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:410]
+INFO: [Synth 8-11241] undeclared symbol 'CECTRL', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:411]
+INFO: [Synth 8-11241] undeclared symbol 'CED', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:412]
+INFO: [Synth 8-11241] undeclared symbol 'CEINMODE', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:413]
+INFO: [Synth 8-11241] undeclared symbol 'CEM', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:414]
+INFO: [Synth 8-11241] undeclared symbol 'CEP', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:415]
+INFO: [Synth 8-11241] undeclared symbol 'RSTA', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:417]
+INFO: [Synth 8-11241] undeclared symbol 'RSTALLCARRYIN', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:418]
+INFO: [Synth 8-11241] undeclared symbol 'RSTALUMODE', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:419]
+INFO: [Synth 8-11241] undeclared symbol 'RSTB', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:420]
+INFO: [Synth 8-11241] undeclared symbol 'RSTC', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:421]
+INFO: [Synth 8-11241] undeclared symbol 'RSTCTRL', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:422]
+INFO: [Synth 8-11241] undeclared symbol 'RSTD', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:423]
+INFO: [Synth 8-11241] undeclared symbol 'RSTINMODE', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:424]
+INFO: [Synth 8-11241] undeclared symbol 'RSTM', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:425]
+INFO: [Synth 8-11241] undeclared symbol 'RSTP', assumed default net type 'wire' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:426]
+INFO: [Synth 8-6157] synthesizing module 'core_dummy_wrapper' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/core_dummy_wrapper.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'MMCM_clock_gen' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/MMCM_clock_gen.sv:2]
+	Parameter MMCM_OUT_FREQ bound to: 32'sb00000000000000000000000111110100 
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_BASE' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:84708]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 10.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 8.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 10.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: double 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.000000 - type: double 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_BASE' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:84708]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2676]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2676]
+INFO: [Synth 8-6155] done synthesizing module 'MMCM_clock_gen' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/MMCM_clock_gen.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'async_reset_synchronizer' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/async_reset_synchronizer.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'async_reset_synchronizer' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/async_reset_synchronizer.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:75825]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:75825]
+INFO: [Synth 8-6157] synthesizing module 'OBUF' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:99428]
+INFO: [Synth 8-6155] done synthesizing module 'OBUF' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:99428]
+INFO: [Synth 8-6157] synthesizing module 'RISCV_core' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/RISCV_core.sv:3]
+	Parameter IDcluster bound to: 0 - type: integer 
+	Parameter IDrow bound to: 0 - type: integer 
+	Parameter IDminirow bound to: 0 - type: integer 
+	Parameter IDposx bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'alu_dsp' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:4]
+	Parameter ENABLE_UNIFIED_BARREL_SHIFTER bound to: 0 - type: integer 
+	Parameter ALUOP_WIDTH bound to: 4 - type: integer 
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter PIPE_STAGE0 bound to: 1'b1 
+	Parameter PIPE_STAGE1 bound to: 1'b1 
+	Parameter PIPE_STAGE2 bound to: 1'b1 
+INFO: [Synth 8-6157] synthesizing module 'DSP48E1' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:41928]
+	Parameter ACASCREG bound to: 1 - type: integer 
+	Parameter ADREG bound to: 1 - type: integer 
+	Parameter ALUMODEREG bound to: 1 - type: integer 
+	Parameter AREG bound to: 1 - type: integer 
+	Parameter AUTORESET_PATDET bound to: NO_RESET - type: string 
+	Parameter A_INPUT bound to: DIRECT - type: string 
+	Parameter BCASCREG bound to: 1 - type: integer 
+	Parameter BREG bound to: 1 - type: integer 
+	Parameter B_INPUT bound to: DIRECT - type: string 
+	Parameter CARRYINREG bound to: 1 - type: integer 
+	Parameter CARRYINSELREG bound to: 1 - type: integer 
+	Parameter CREG bound to: 1 - type: integer 
+	Parameter DREG bound to: 1 - type: integer 
+	Parameter INMODEREG bound to: 1 - type: integer 
+	Parameter MASK bound to: 48'b001111111111111111111111111111111111111111111111 
+	Parameter MREG bound to: 1 - type: integer 
+	Parameter OPMODEREG bound to: 1 - type: integer 
+	Parameter PATTERN bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PREG bound to: 1 - type: integer 
+	Parameter SEL_MASK bound to: MASK - type: string 
+	Parameter SEL_PATTERN bound to: PATTERN - type: string 
+	Parameter USE_DPORT bound to: FALSE - type: string 
+	Parameter USE_MULT bound to: MULTIPLY - type: string 
+	Parameter USE_PATTERN_DETECT bound to: NO_PATDET - type: string 
+	Parameter USE_SIMD bound to: ONE48 - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'DSP48E1' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:41928]
+WARNING: [Synth 8-689] width (1) of port connection 'ACOUT' does not match port width (30) of module 'DSP48E1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:371]
+WARNING: [Synth 8-689] width (1) of port connection 'BCOUT' does not match port width (18) of module 'DSP48E1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:372]
+WARNING: [Synth 8-689] width (1) of port connection 'PCOUT' does not match port width (48) of module 'DSP48E1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:375]
+WARNING: [Synth 8-689] width (1) of port connection 'CARRYOUT' does not match port width (4) of module 'DSP48E1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:382]
+WARNING: [Synth 8-689] width (1) of port connection 'ACIN' does not match port width (30) of module 'DSP48E1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:385]
+WARNING: [Synth 8-689] width (1) of port connection 'BCIN' does not match port width (18) of module 'DSP48E1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:386]
+WARNING: [Synth 8-689] width (1) of port connection 'PCIN' does not match port width (48) of module 'DSP48E1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:389]
+WARNING: [Synth 8-689] width (1) of port connection 'CARRYINSEL' does not match port width (3) of module 'DSP48E1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:392]
+WARNING: [Synth 8-689] width (9) of port connection 'OPMODE' does not match port width (7) of module 'DSP48E1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:395]
+WARNING: [Synth 8-689] width (27) of port connection 'D' does not match port width (25) of module 'DSP48E1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:401]
+INFO: [Synth 8-6155] done synthesizing module 'alu_dsp' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'mux2to1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/mux2to1.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/matthias/fpga_projects/BRISKI/hardware/rtl/mux2to1.sv:10]
+INFO: [Synth 8-6155] done synthesizing module 'mux2to1' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/mux2to1.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pcreg_vec' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pcreg_vec.sv:2]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter NUM_THREADS bound to: 16 - type: integer 
+	Parameter EXE_STAGE bound to: 9 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'LUT_RAM' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/LUT_RAM.sv:1]
+	Parameter SIZE bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'LUT_RAM' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/LUT_RAM.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'pcreg_vec' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pcreg_vec.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter N bound to: 1 - type: integer 
+	Parameter WithReset bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'instruction_decoder' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/instruction_decoder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'instruction_decoder' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/instruction_decoder.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized0' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 25 - type: integer 
+	Parameter N bound to: 1'b0 
+	Parameter WithReset bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized0' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 4 - type: integer 
+	Parameter N bound to: 1'b0 
+	Parameter WithReset bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized1' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'immsel_signext' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/immsel_signext.sv:2]
+	Parameter ID bound to: 11'b00000000000 
+	Parameter NUM_THREADS bound to: 16 - type: integer 
+	Parameter registered bound to: 1'b0 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/matthias/fpga_projects/BRISKI/hardware/rtl/immsel_signext.sv:63]
+INFO: [Synth 8-6155] done synthesizing module 'immsel_signext' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/immsel_signext.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized2' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 7 - type: integer 
+	Parameter N bound to: 1'b0 
+	Parameter WithReset bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized2' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized3' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 3 - type: integer 
+	Parameter N bound to: 1'b0 
+	Parameter WithReset bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized3' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/control_unit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/control_unit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 0 - type: integer 
+	Parameter WithReset bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized4' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 5 - type: integer 
+	Parameter N bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized4' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized5' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 5 - type: integer 
+	Parameter N bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized5' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'regfile_vec' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/regfile_vec.sv:3]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter ENABLE_BRAM_REGFILE bound to: 0 - type: integer 
+	Parameter NUM_THREADS bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'BRAM_SDP' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/BRAM_SDP.sv:4]
+	Parameter SIZE bound to: 512 - type: integer 
+	Parameter ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ENABLE_BRAM_REGFILE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'BRAM_SDP' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/BRAM_SDP.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_vec' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/regfile_vec.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'alu_control' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_control.sv:3]
+	Parameter registered bound to: 1'b0 
+INFO: [Synth 8-226] default block is never used [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_control.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'alu_control' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_control.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized6' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter N bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized6' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized7' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter N bound to: 5 - type: integer 
+	Parameter WithReset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized7' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized0' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized0' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mux2to1__parameterized0' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/mux2to1.sv:1]
+	Parameter MUX_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/matthias/fpga_projects/BRISKI/hardware/rtl/mux2to1.sv:10]
+INFO: [Synth 8-6155] done synthesizing module 'mux2to1__parameterized0' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/mux2to1.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 3 - type: integer 
+	Parameter WithReset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized1' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized2' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 4 - type: integer 
+	Parameter WithReset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized2' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized3' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 6 - type: integer 
+	Parameter WithReset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized3' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized4' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized4' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized8' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 3 - type: integer 
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized8' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized9' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter N bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized9' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'branch_logic' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/branch_logic.sv:1]
+	Parameter PIPE_STAGE0 bound to: 1'b1 
+	Parameter PIPE_STAGE1 bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'branch_logic' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/branch_logic.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized5' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 1'b1 
+	Parameter WithReset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized5' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized10' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 4 - type: integer 
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized10' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized6' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized6' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized11' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter N bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized11' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'Adder32' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/Adder32.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'Adder32' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/Adder32.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized12' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter N bound to: 1'b1 
+	Parameter WithReset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized12' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized7' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 7 - type: integer 
+	Parameter WithReset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized7' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'reservation_set' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/reservation_set.sv:1]
+	Parameter NUM_THREADS bound to: 16 - type: integer 
+	Parameter PIPE_STAGE bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'reservation_set' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/reservation_set.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized8' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized8' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized9' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized9' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized13' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter N bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized13' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'store_unit' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/store_unit.sv:1]
+	Parameter PIPE_STAGE bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'store_unit' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/store_unit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized14' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 14 - type: integer 
+	Parameter N bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized14' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized15' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 4 - type: integer 
+	Parameter N bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized15' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized10' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 11 - type: integer 
+	Parameter WithReset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized10' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized16' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 3 - type: integer 
+	Parameter N bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized16' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_sl__parameterized11' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+	Parameter N bound to: 13 - type: integer 
+	Parameter WithReset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_sl__parameterized11' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_sl.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized17' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 5 - type: integer 
+	Parameter N bound to: 13 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized17' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pipe_vec__parameterized18' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+	Parameter DWIDTH bound to: 2 - type: integer 
+	Parameter N bound to: 12 - type: integer 
+	Parameter WithReset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pipe_vec__parameterized18' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'load_unit' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/load_unit.sv:1]
+	Parameter PIPE_STAGE0 bound to: 1'b0 
+	Parameter PIPE_STAGE1 bound to: 1'b1 
+INFO: [Synth 8-226] default block is never used [/home/matthias/fpga_projects/BRISKI/hardware/rtl/load_unit.sv:29]
+INFO: [Synth 8-226] default block is never used [/home/matthias/fpga_projects/BRISKI/hardware/rtl/load_unit.sv:40]
+INFO: [Synth 8-6155] done synthesizing module 'load_unit' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/load_unit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mux4to1' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/mux4to1.sv:1]
+	Parameter MUX_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/matthias/fpga_projects/BRISKI/hardware/rtl/mux4to1.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'mux4to1' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/mux4to1.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'RISCV_core' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/RISCV_core.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'BRAM' [/home/matthias/fpga_projects/BRISKI/hardware/rtl/BRAM.sv:3]
+	Parameter SIZE bound to: 1024 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter COL_WIDTH bound to: 8 - type: integer 
+	Parameter NB_COL bound to: 4 - type: integer 
+	Parameter INIT_FILE bound to: ../../software/runs/sparkle-template-mandelbrot.inst - type: string 
+INFO: [Synth 8-3876] $readmem data file '../../software/runs/sparkle-template-mandelbrot.inst' is read successfully [/home/matthias/fpga_projects/BRISKI/hardware/rtl/BRAM.sv:31]
+INFO: [Synth 8-6155] done synthesizing module 'BRAM' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/BRAM.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'core_dummy_wrapper' (0#1) [/home/matthias/fpga_projects/BRISKI/hardware/rtl/core_dummy_wrapper.sv:3]
+WARNING: [Synth 8-6014] Unused sequential element first_stage_registered.op1_reg was removed.  [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:51]
+WARNING: [Synth 8-6014] Unused sequential element first_stage_registered.op2_reg was removed.  [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:52]
+WARNING: [Synth 8-3848] Net ACIN in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:385]
+WARNING: [Synth 8-3848] Net BCIN in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:386]
+WARNING: [Synth 8-3848] Net CARRYCASCIN in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:387]
+WARNING: [Synth 8-3848] Net CARRYIN in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:400]
+WARNING: [Synth 8-3848] Net CARRYINSEL in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:392]
+WARNING: [Synth 8-3848] Net CEA1 in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:403]
+WARNING: [Synth 8-3848] Net CEA2 in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:404]
+WARNING: [Synth 8-3848] Net CEAD in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:405]
+WARNING: [Synth 8-3848] Net CEALUMODE in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:406]
+WARNING: [Synth 8-3848] Net CEB1 in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:407]
+WARNING: [Synth 8-3848] Net CEB2 in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:408]
+WARNING: [Synth 8-3848] Net CEC in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:409]
+WARNING: [Synth 8-3848] Net CECARRYIN in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:410]
+WARNING: [Synth 8-3848] Net CECTRL in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:411]
+WARNING: [Synth 8-3848] Net CED in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:412]
+WARNING: [Synth 8-3848] Net CEINMODE in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:413]
+WARNING: [Synth 8-3848] Net CEM in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:414]
+WARNING: [Synth 8-3848] Net CEP in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:415]
+WARNING: [Synth 8-3848] Net CLK in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:393]
+WARNING: [Synth 8-3848] Net MULTSIGNIN in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:388]
+WARNING: [Synth 8-3848] Net PCIN in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:389]
+WARNING: [Synth 8-3848] Net RSTA in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:417]
+WARNING: [Synth 8-3848] Net RSTALLCARRYIN in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:418]
+WARNING: [Synth 8-3848] Net RSTALUMODE in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:419]
+WARNING: [Synth 8-3848] Net RSTB in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:420]
+WARNING: [Synth 8-3848] Net RSTC in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:421]
+WARNING: [Synth 8-3848] Net RSTCTRL in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:422]
+WARNING: [Synth 8-3848] Net RSTD in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:423]
+WARNING: [Synth 8-3848] Net RSTINMODE in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:424]
+WARNING: [Synth 8-3848] Net RSTM in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:425]
+WARNING: [Synth 8-3848] Net RSTP in module/entity alu_dsp does not have driver. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/alu_dsp.sv:426]
+WARNING: [Synth 8-7129] Port reset in module pipe_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_sl__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized13 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized17 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized15 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module store_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_sl__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_sl__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_sl__parameterized6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized10 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_sl__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module alu_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module pipe_vec__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_sl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module pipe_sl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module pipe_vec__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module pipe_vec__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module pipe_vec__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module immsel_signext is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module pipe_vec__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module pipe_vec__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[31] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[30] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[29] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[28] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[27] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[26] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[25] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[24] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[23] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[22] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[21] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[20] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[19] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[18] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[17] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[16] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[15] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[14] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[13] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pc_in[12] in module pcreg_vec is either unconnected or has no load
+WARNING: [Synth 8-7129] Port REFCLK_N in module core_dummy_wrapper is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2172.285 ; gain = 514.770 ; free physical = 5840 ; free virtual = 10567
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2190.098 ; gain = 532.582 ; free physical = 5828 ; free virtual = 10555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2190.098 ; gain = 532.582 ; free physical = 5828 ; free virtual = 10555
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2196.035 ; gain = 0.000 ; free physical = 5819 ; free virtual = 10547
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/usr-constraints/basys3.xdc]
+Finished Parsing XDC File [/home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/usr-constraints/basys3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/usr-constraints/basys3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/core_dummy_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/core_dummy_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2272.941 ; gain = 0.000 ; free physical = 5799 ; free virtual = 10526
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  MMCME2_BASE => MMCME2_ADV: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2272.941 ; gain = 0.000 ; free physical = 5799 ; free virtual = 10526
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2272.941 ; gain = 615.426 ; free physical = 5798 ; free virtual = 10525
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2280.945 ; gain = 623.430 ; free physical = 5798 ; free virtual = 10525
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2280.945 ; gain = 623.430 ; free physical = 5798 ; free virtual = 10525
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-3971] The signal "BRAM:/RAM_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2280.945 ; gain = 623.430 ; free physical = 5797 ; free virtual = 10526
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'RISCV_core_inst/imm_reg_inst1' (pipe_vec) to 'RISCV_core_inst/imm_reg_inst2'
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 46    
+	               14 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
+	                5 Bit    Registers := 16    
+	                4 Bit    Registers := 25    
+	                3 Bit    Registers := 12    
+	                2 Bit    Registers := 12    
+	                1 Bit    Registers := 110   
++---RAMs : 
+	              32K Bit	(1024 X 32 bit)          RAMs := 1     
+	              16K Bit	(512 X 32 bit)          RAMs := 2     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 24    
+	   4 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 2     
+	   7 Input    6 Bit        Muxes := 1     
+	   7 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 3     
+	   4 Input    4 Bit        Muxes := 2     
+	   8 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 13    
+	   3 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3936] Found unconnected internal register 'RISCV_core_inst/dmem_addr_pipe_inst/without_reset.n_is_1.pipeline_stages_reg[0]' and it is trimmed from '14' to '10' bits. [/home/matthias/fpga_projects/BRISKI/hardware/rtl/pipe_vec.sv:21]
+WARNING: [Synth 8-7129] Port REFCLK_N in module core_dummy_wrapper is either unconnected or has no load
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-3971] The signal "core_dummy_wrapper/instr_and_data_mem/RAM_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+---------------------------------------------------------------------------------
+Start Pre Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Iterative Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Post Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2288.953 ; gain = 631.438 ; free physical = 5774 ; free virtual = 10509
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2288.953 ; gain = 631.438 ; free physical = 5774 ; free virtual = 10509
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++-------------------+-----------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name        | RTL Object                                                      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------+-----------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|core_dummy_wrapper | instr_and_data_mem/RAM_reg                                      | 1 K x 32(NO_CHANGE)    | W | R | 1 K x 32(NO_CHANGE)    | W | R | Port A and B     | 0      | 1      | 
+|core_dummy_wrapper | RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg | 512 x 32(NO_CHANGE)    | W |   | 512 x 32(NO_CHANGE)    |   | R | Port A and B     | 1      | 0      | 
+|core_dummy_wrapper | RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg | 512 x 32(NO_CHANGE)    | W |   | 512 x 32(NO_CHANGE)    |   | R | Port A and B     | 1      | 0      | 
++-------------------+-----------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++-------------------+--------------------------------------------------------------+----------------+----------------------+-------------+
+|Module Name        | RTL Object                                                   | Inference      | Size (Depth x Width) | Primitives  | 
++-------------------+--------------------------------------------------------------+----------------+----------------------+-------------+
+|core_dummy_wrapper | RISCV_core_inst/reg_program_counter_inst/PC_MEM_INST/MEM_reg | User Attribute | 16 x 12              | RAM32M x 2  | 
++-------------------+--------------------------------------------------------------+----------------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2416.953 ; gain = 759.438 ; free physical = 5637 ; free virtual = 10372
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg. Setting write mode to NO_CHANGE 
+INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg. Setting write mode to NO_CHANGE 
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2450.758 ; gain = 793.242 ; free physical = 5607 ; free virtual = 10341
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++-------------------+-----------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name        | RTL Object                                                      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------+-----------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|core_dummy_wrapper | instr_and_data_mem/RAM_reg                                      | 1 K x 32(NO_CHANGE)    | W | R | 1 K x 32(NO_CHANGE)    | W | R | Port A and B     | 0      | 1      | 
+|core_dummy_wrapper | RISCV_core_inst/register_file_vec_inst/regfile_top_inst/MEM_reg | 512 x 32(NO_CHANGE)    | W |   | 512 x 32(NO_CHANGE)    |   | R | Port A and B     | 1      | 0      | 
+|core_dummy_wrapper | RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg | 512 x 32(NO_CHANGE)    | W |   | 512 x 32(NO_CHANGE)    |   | R | Port A and B     | 1      | 0      | 
++-------------------+-----------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++-------------------+--------------------------------------------------------------+----------------+----------------------+-------------+
+|Module Name        | RTL Object                                                   | Inference      | Size (Depth x Width) | Primitives  | 
++-------------------+--------------------------------------------------------------+----------------+----------------------+-------------+
+|core_dummy_wrapper | RISCV_core_inst/reg_program_counter_inst/PC_MEM_INST/MEM_reg | User Attribute | 16 x 12              | RAM32M x 2  | 
++-------------------+--------------------------------------------------------------+----------------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5816] Retiming module `core_dummy_wrapper`
+	Numbers of forward move = 0, and backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `core_dummy_wrapper' done
+
+
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2450.758 ; gain = 793.242 ; free physical = 5605 ; free virtual = 10339
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2591.570 ; gain = 934.055 ; free physical = 5479 ; free virtual = 10213
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2591.570 ; gain = 934.055 ; free physical = 5478 ; free virtual = 10212
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2591.570 ; gain = 934.055 ; free physical = 5478 ; free virtual = 10212
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2591.570 ; gain = 934.055 ; free physical = 5478 ; free virtual = 10212
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2594.539 ; gain = 937.023 ; free physical = 5470 ; free virtual = 10204
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2594.539 ; gain = 937.023 ; free physical = 5470 ; free virtual = 10204
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++-------------------+------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name        | RTL Name                                                                                             | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++-------------------+------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|core_dummy_wrapper | RISCV_core_inst/thread_index_stage_reg[9][3]                                                         | 6      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/branch_logic_inst/first_stage_is_registered.funct3_pipe0_reg[2]                      | 5      | 3     | NO           | NO                 | YES               | 3      | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/lr_pipe_inst/with_reset.n_is_greater_than_2_reset.pipeline_stages_reg[6][0]          | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/sc_pipe_inst/with_reset.n_is_greater_than_2_reset.pipeline_stages_reg[6][0]          | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/pre_mem_pipe_inst/with_reset.n_is_greater_than_2_reset.pipeline_stages_reg[6][0]     | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/WBSel_pipe_inst/with_reset.n_is_greater_than_2_reset.pipeline_stages_reg[11][1]      | 11     | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/pcplusfour_pipe_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[4][12]    | 5      | 13    | NO           | NO                 | YES               | 13     | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/alu_result_reg_wb_inst/without_reset.n_is_1.pipeline_stages_reg[0][31]               | 6      | 18    | NO           | NO                 | YES               | 18     | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/alu_result_reg_wb_inst/without_reset.n_is_1.pipeline_stages_reg[0][13]               | 5      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/load_pipe_inst/with_reset.n_is_greater_than_2_reset.pipeline_stages_reg[10][0]       | 10     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/regfile_wa_pipe_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[12][4]    | 13     | 5     | NO           | NO                 | YES               | 5      | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/rd2_reg2_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[4][31]           | 5      | 32    | NO           | NO                 | YES               | 32     | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/is_jump_reg_inst/with_reset.n_is_greater_than_2_reset.pipeline_stages_reg[5][0]      | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/jalr_clr_lsb_reg_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[6][0]    | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|core_dummy_wrapper | RISCV_core_inst/regfile_we_pipe_inst/with_reset.n_is_greater_than_2_reset.pipeline_stages_reg[12][0] | 12     | 1     | NO           | NO                 | YES               | 1      | 0       | 
++-------------------+------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|alu_dsp     | Dynamic     | -      | -      | -      | -      | 32     | -    | -    | -    | -    | -     | 1    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |BUFG        |     2|
+|2     |CARRY4      |    12|
+|3     |DSP48E1     |     1|
+|4     |LUT1        |     3|
+|5     |LUT2        |    17|
+|6     |LUT3        |   241|
+|7     |LUT4        |    64|
+|8     |LUT5        |    72|
+|9     |LUT6        |   130|
+|10    |MMCME2_BASE |     1|
+|11    |RAM32M      |     2|
+|12    |RAMB18E1    |     2|
+|13    |RAMB36E1    |     1|
+|14    |SRL16E      |    90|
+|15    |FDRE        |   854|
+|16    |FDSE        |     4|
+|17    |IBUF        |     2|
+|18    |OBUF        |     1|
++------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2594.539 ; gain = 937.023 ; free physical = 5470 ; free virtual = 10204
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2594.539 ; gain = 854.180 ; free physical = 5469 ; free virtual = 10203
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2594.547 ; gain = 937.023 ; free physical = 5469 ; free virtual = 10203
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2594.547 ; gain = 0.000 ; free physical = 5636 ; free virtual = 10370
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/usr-constraints/basys3.xdc]
+Finished Parsing XDC File [/home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/usr-constraints/basys3.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2650.566 ; gain = 0.000 ; free physical = 5642 ; free virtual = 10376
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  MMCME2_BASE => MMCME2_ADV: 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+
+Synth Design complete | Checksum: d70ee368
+INFO: [Common 17-83] Releasing license: Synthesis
+227 Infos, 120 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:33 . Memory (MB): peak = 2650.566 ; gain = 1161.371 ; free physical = 5642 ; free virtual = 10376
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1834.646; main = 1834.646; forked = 270.500
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3197.301; main = 2650.566; forked = 908.348
+## set time_2 [clock seconds]
+## puts "Elapsed time (Synth step)= [expr [expr $time_2 - $time_1] / 3600] Hours : [expr [expr [expr $time_2 - $time_1] / 60] % 60] Minutes : [expr [expr $time_2 - $time_1] % 60] Seconds"
+Elapsed time (Synth step)= 0 Hours : 0 Minutes : 33 Seconds
+## write_checkpoint -force $outputDir/post_synth
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2682.582 ; gain = 0.000 ; free physical = 5642 ; free virtual = 10376
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2682.582 ; gain = 0.000 ; free physical = 5642 ; free virtual = 10376
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2682.582 ; gain = 0.000 ; free physical = 5642 ; free virtual = 10376
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2682.582 ; gain = 0.000 ; free physical = 5642 ; free virtual = 10376
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2682.582 ; gain = 0.000 ; free physical = 5642 ; free virtual = 10376
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2682.582 ; gain = 0.000 ; free physical = 5642 ; free virtual = 10377
+Write Physdb Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2682.582 ; gain = 0.000 ; free physical = 5642 ; free virtual = 10377
+INFO: [Common 17-1381] The checkpoint '/home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/post_synth.dcp' has been generated.
+## report_clocks -file $outputDir/clocks.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+report_clocks: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2771.395 ; gain = 88.812 ; free physical = 5549 ; free virtual = 10283
+## report_timing_summary -file $outputDir/post_synth_timing_summary.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+## report_utilization -file $outputDir/post_synth_util.rpt
+# source $COMPILE_SCRIPTS_DIR/opt.tcl
+## set time_1 [clock seconds]
+## opt_design -directive ExploreWithRemap -debug_log -verbose
+Command: opt_design -directive ExploreWithRemap -debug_log -verbose
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: ExploreWithRemap
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.58 . Memory (MB): peak = 2874.285 ; gain = 93.984 ; free physical = 5442 ; free virtual = 10176
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1eb51a327
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5240 ; free virtual = 9975
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1eb51a327
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5240 ; free virtual = 9975
+Phase 1 Initialization | Checksum: 1eb51a327
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5240 ; free virtual = 9975
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 1eb51a327
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5241 ; free virtual = 9975
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 1eb51a327
+
+Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5241 ; free virtual = 9975
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1eb51a327
+
+Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5241 ; free virtual = 9975
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-442] LUT Reduction optimized 0 LUTs
+INFO: [Opt 31-677] Could not push inverter RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages[0][4]_i_2 to load RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][4]_i_1 because inversion is not supported on the pin S[1]
+INFO: [Opt 31-47] Cell absorbed into downstream logic: LUT1 cell RISCV_core_inst/instr_reg_inst/without_reset.n_is_1.pipeline_stages_reg[0]/i_ driving pin instr_and_data_mem/RAM_reg/RSTREGARSTREG of instr_and_data_mem/RAM_reg.
+INFO: [Opt 31-677] Could not push inverter RISCV_core_inst/reg_program_counter_inst/counter[0]_i_1 to load RISCV_core_inst/reg_program_counter_inst/counter_reg[0] because inversion is not supported on the pin D
+INFO: [Opt 31-677] Could not push inverter RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages[0][4]_i_2 to load RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][4]_i_1 because inversion is not supported on the pin S[1]
+INFO: [Opt 31-677] Could not push inverter RISCV_core_inst/reg_program_counter_inst/counter[0]_i_1 to load RISCV_core_inst/reg_program_counter_inst/counter_reg[0] because inversion is not supported on the pin D
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 11b5b401b
+
+Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5240 ; free virtual = 9975
+Retarget | Checksum: 11b5b401b
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 1 cells
+INFO: [Opt 31-1020] In phase Retarget, 1 netlist objects are constrained preventing optimization. 
+INFO: [Opt 31-1019] 100.00% of prevented optimizations are due to the following constraint: Timing on netlist object (Pin) : MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKFBOUT
+
+Phase 4 Constant propagation
+INFO: [Opt 31-432] A CARRY4/CO[0] is optimized to wire, which is a starting point to subsequent propagation. Output pin: RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][4]_i_1/CO[0]
+INFO: [Opt 31-431] constant propagation found 1 starting points
+INFO: [Opt 31-442] LUT Reduction optimized 0 LUTs
+INFO: [Opt 31-677] Could not push inverter RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages[0][4]_i_2 to load RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][4]_i_1 because inversion is not supported on the pin S[1]
+INFO: [Opt 31-677] Could not push inverter RISCV_core_inst/reg_program_counter_inst/counter[0]_i_1 to load RISCV_core_inst/reg_program_counter_inst/counter_reg[0] because inversion is not supported on the pin D
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 1d864a86f
+
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5240 ; free virtual = 9975
+Constant propagation | Checksum: 1d864a86f
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][12]_i_1_n_2
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][12]_i_1_n_3
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][4]_i_1_n_1
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][4]_i_1_n_2
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][4]_i_1_n_3
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][8]_i_1_n_1
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][8]_i_1_n_2
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][8]_i_1_n_3
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_eq0_carry__0_n_1
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_eq0_carry__0_n_2
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_eq0_carry__0_n_3
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_eq0_carry__1_n_2
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_eq0_carry__1_n_3
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_eq0_carry_n_1
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_eq0_carry_n_2
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_eq0_carry_n_3
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry__0_n_1
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry__0_n_2
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry__0_n_3
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry__1_n_1
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry__1_n_2
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry__1_n_3
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry__2_n_1
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry__2_n_2
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry__2_n_3
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry_n_1
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry_n_2
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/branch_logic_inst/br_lt0_carry_n_3
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/reservation_set_inst/address_match_carry_n_1
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/reservation_set_inst/address_match_carry_n_2
+INFO: [Opt 31-131] Removed net: RISCV_core_inst/reservation_set_inst/address_match_carry_n_3
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5240 ; free virtual = 9975
+INFO: [Opt 31-55] Skipping sweep on cell due to DONT_TOUCH property, cell: proc_rst_reg_1_reg.
+INFO: [Opt 31-55] Skipping sweep on cell due to DONT_TOUCH property, cell: proc_rst_reg_2_reg.
+Phase 5 Sweep | Checksum: 1b1043a36
+
+Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5240 ; free virtual = 9975
+Sweep | Checksum: 1b1043a36
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+INFO: [Opt 31-1020] In phase Sweep, 5 netlist objects are constrained preventing optimization. 
+INFO: [Opt 31-1019] 28.57% of prevented optimizations are due to the following constraint: DONT_TOUCH on netlist object (Cell) : proc_rst_reg_2_reg
+INFO: [Opt 31-1019] 28.57% of prevented optimizations are due to the following constraint: DONT_TOUCH on netlist object (Cell) : proc_rst_reg_1_reg
+INFO: [Opt 31-1019] 14.29% of prevented optimizations are due to the following constraint: DONT_TOUCH on netlist object (Net) : proc_rst_reg_2
+INFO: [Opt 31-1019] 14.29% of prevented optimizations are due to the following constraint: DONT_TOUCH on netlist object (Net) : proc_rst_reg_1
+INFO: [Opt 31-1019] 14.29% of prevented optimizations are due to the following constraint: DONT_TOUCH on netlist object (Net) : proc_rst
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-1565] Number of clock buffers excluding low fanout clock: 2
+Phase 6 BUFG optimization | Checksum: 1b1043a36
+
+Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5240 ; free virtual = 9975
+BUFG optimization | Checksum: 1b1043a36
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 1b1043a36
+
+Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.1 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5240 ; free virtual = 9975
+Shift Register Optimization | Checksum: 1b1043a36
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+INFO: [Opt 31-1555] control_set_opt supports Versal devices only, and device 7a35t is unsupported
+
+Phase 8 Remap
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/with_reset.n_is_greater_than_2_reset.pipeline_stages[0][0]_i_1__5/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/with_reset.n_is_greater_than_2_reset.pipeline_stages[0][0]_i_1__0/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_greater_than_2.pipeline_stages[0][0]_i_1__0/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/with_reset.n_is_greater_than_2_reset.pipeline_stages[0][0]_i_1__7/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/with_reset.n_is_greater_than_2_reset.pipeline_stages[0][0]_i_1__6/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funct3_reg2_inst/without_reset.n_is_1.pipeline_stages[0][2]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_result_reg_mem_inst/without_reset.n_is_1.pipeline_stages[0][3]_i_2/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funct3_reg2_inst/without_reset.n_is_1.pipeline_stages[0][0]_i_1__0/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_result_reg_mem_inst/without_reset.n_is_1.pipeline_stages[0][1]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[17]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[15]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[16]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][5]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][6]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][7]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][8]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][9]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][25]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][26]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][27]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][28]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][29]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][30]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_2.pipeline_stages[0][31]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[28]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[27]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[25]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[24]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[26]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[22]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[21]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[23]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[19]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[18]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[20]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[2]_i_2/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[14]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[16]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[17]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[18]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[19]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[20]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[21]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[22]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[23]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[24]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[25]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[26]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[27]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[28]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[29]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[30]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/funt3_reg3_inst/second_stage_registered.o_dmem_post[31]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[3]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[4]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[2]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[6]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[7]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[5]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[9]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[10]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[8]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[12]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[13]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[11]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra[1]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_greater_than_2.pipeline_stages[0][3]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_greater_than_2.pipeline_stages[0][1]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_greater_than_2.pipeline_stages[0][0]_i_1__1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-528] Cannot remap pin: instr_and_data_mem/without_reset.n_is_greater_than_2.pipeline_stages[0][2]_i_1/O, Reason: Prevented by SOFT_HLUTNM constraint
+INFO: [Opt 31-442] LUT Reduction optimized 0 LUTs
+Phase 8 Remap | Checksum: 17037fdb4
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5230 ; free virtual = 9964
+Remap | Checksum: 17037fdb4
+INFO: [Opt 31-389] Phase Remap created 7 cells and removed 6 cells
+INFO: [Opt 31-1020] In phase Remap, 1 netlist objects are constrained preventing optimization. 
+INFO: [Opt 31-1019] 100.00% of prevented optimizations are due to the following constraint: DONT_TOUCH on netlist object (Cell) : proc_rst_reg_2_reg
+
+Phase 9 Post Processing Netlist
+INFO: [Opt 31-677] Could not push inverter RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages[0][4]_i_2 to load RISCV_core_inst/Adder32_inst/with_reset.n_is_1_reset.pipeline_stages_reg[0][4]_i_1 because inversion is not supported on the pin S[1]
+INFO: [Opt 31-677] Could not push inverter RISCV_core_inst/reg_program_counter_inst/counter[0]_i_1 to load RISCV_core_inst/reg_program_counter_inst/counter_reg[0] because inversion is not supported on the pin D
+Phase 9 Post Processing Netlist | Checksum: 1d6319ab2
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5230 ; free virtual = 9964
+Post Processing Netlist | Checksum: 1d6319ab2
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 10 Finalization
+
+Phase 10.1 Finalizing Design Cores and Updating Shapes
+Phase 10.1 Finalizing Design Cores and Updating Shapes | Checksum: 24dacd1c8
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5230 ; free virtual = 9964
+
+Phase 10.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5230 ; free virtual = 9964
+Phase 10.2 Verifying Netlist Connectivity | Checksum: 24dacd1c8
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5230 ; free virtual = 9964
+Phase 10 Finalization | Checksum: 24dacd1c8
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5230 ; free virtual = 9964
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               1  |                                              1  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              5  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Remap                        |               7  |               6  |                                              1  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 24dacd1c8
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5230 ; free virtual = 9964
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5230 ; free virtual = 9964
+Ending Netlist Obfuscation Task | Checksum: 24dacd1c8
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5230 ; free virtual = 9964
+INFO: [Common 17-83] Releasing license: Implementation
+149 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 3073.223 ; gain = 295.891 ; free physical = 5230 ; free virtual = 9964
+## set time_2 [clock seconds]
+## puts "Elapsed time (Opt step)= [expr [expr $time_2 - $time_1] / 3600] Hours : [expr [expr [expr $time_2 - $time_1] / 60] % 60] Minutes : [expr [expr $time_2 - $time_1] % 60] Seconds"
+Elapsed time (Opt step)= 0 Hours : 0 Minutes : 6 Seconds
+## write_checkpoint -force $outputDir/post_opt
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5229 ; free virtual = 9964
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5229 ; free virtual = 9964
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5229 ; free virtual = 9964
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5229 ; free virtual = 9964
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5229 ; free virtual = 9964
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5229 ; free virtual = 9964
+Write Physdb Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5229 ; free virtual = 9964
+INFO: [Common 17-1381] The checkpoint '/home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/post_opt.dcp' has been generated.
+# source $COMPILE_SCRIPTS_DIR/place.tcl
+## open_checkpoint $outputDir/post_opt.dcp
+Command: open_checkpoint ../vivado-runs/post_opt.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5239 ; free virtual = 9973
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5237 ; free virtual = 9971
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5233 ; free virtual = 9967
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5232 ; free virtual = 9966
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5232 ; free virtual = 9966
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5232 ; free virtual = 9966
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5232 ; free virtual = 9966
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5232 ; free virtual = 9966
+Read Physdb Files: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5232 ; free virtual = 9966
+Restored from archive | CPU: 0.010000 secs | Memory: 0.004990 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5232 ; free virtual = 9966
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5232 ; free virtual = 9966
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2024.2 (64-bit) build 5239630
+## set place_directive ExtraPostPlacementOpt
+## set time_1 [clock seconds]
+## place_design -directive ${place_directive} -verbose
+Command: place_design -directive ExtraPostPlacementOpt -verbose
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Vivado_Tcl 4-2302] The placer was invoked with the 'ExtraPostPlacementOpt' directive.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5228 ; free virtual = 9962
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 16179d595
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5228 ; free virtual = 9962
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5228 ; free virtual = 9962
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 181508ae6
+
+Time (s): cpu = 00:00:00.45 ; elapsed = 00:00:00.14 . Memory (MB): peak = 3073.223 ; gain = 0.000 ; free physical = 5228 ; free virtual = 9962
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 2048d061a
+
+Time (s): cpu = 00:00:00.95 ; elapsed = 00:00:00.35 . Memory (MB): peak = 3112.266 ; gain = 39.043 ; free physical = 5228 ; free virtual = 9962
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 2048d061a
+
+Time (s): cpu = 00:00:00.95 ; elapsed = 00:00:00.35 . Memory (MB): peak = 3112.266 ; gain = 39.043 ; free physical = 5228 ; free virtual = 9962
+Phase 1 Placer Initialization | Checksum: 2048d061a
+
+Time (s): cpu = 00:00:00.96 ; elapsed = 00:00:00.35 . Memory (MB): peak = 3112.266 ; gain = 39.043 ; free physical = 5228 ; free virtual = 9962
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 24326204e
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.41 . Memory (MB): peak = 3112.266 ; gain = 39.043 ; free physical = 5203 ; free virtual = 9938
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1f1d03b59
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.44 . Memory (MB): peak = 3112.266 ; gain = 39.043 ; free physical = 5210 ; free virtual = 9944
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1f1d03b59
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.45 . Memory (MB): peak = 3112.266 ; gain = 39.043 ; free physical = 5210 ; free virtual = 9944
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 1aab6d223
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5213 ; free virtual = 9947
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 26d0972a3
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:01 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5219 ; free virtual = 9954
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 16 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 7 nets or LUTs. Breaked 0 LUT, combined 7 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5224 ; free virtual = 9958
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |              7  |                     7  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |              7  |                     7  |           0  |           4  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 1c0b3abd3
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5224 ; free virtual = 9958
+Phase 2.5 Global Place Phase2 | Checksum: 228a9daa2
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5224 ; free virtual = 9958
+Phase 2 Global Placement | Checksum: 228a9daa2
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5224 ; free virtual = 9958
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 15515d0ba
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5224 ; free virtual = 9958
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1e869153a
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 22362e58c
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 216e082ac
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 244df0d1c
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 222d9a36d
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 1f84e2d6a
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+Phase 3 Detail Placement | Checksum: 1f84e2d6a
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1de99cd15
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=4.088 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 15c9e880d
+
+Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5223 ; free virtual = 9957
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 2911ad1df
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5223 ; free virtual = 9957
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1de99cd15
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=4.088. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 21f47cb19
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+Phase 4.1 Post Commit Optimization | Checksum: 21f47cb19
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+Post Placement Optimization Initialization | Checksum: 230b69bfd
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=4.088 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1aebb56f5
+
+Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5223 ; free virtual = 9957
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 2911ad1df
+
+Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5223 ; free virtual = 9957
+INFO: [Place 30-746] Post Placement Timing Summary WNS=4.088. For the most accurate timing information please run report_timing.
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 230b69bfd
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                2x2|
+|___________|___________________|___________________|
+|      South|                1x1|                2x2|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 230b69bfd
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+Phase 4.3 Placer Reporting | Checksum: 230b69bfd
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5223 ; free virtual = 9957
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 2d065f63a
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+Ending Placer Task | Checksum: 244972fe9
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 3120.270 ; gain = 47.047 ; free physical = 5223 ; free virtual = 9957
+34 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+## set time_2 [clock seconds]
+## puts "Elapsed time (Place step)= [expr [expr $time_2 - $time_1] / 3600] Hours : [expr [expr [expr $time_2 - $time_1] / 60] % 60] Minutes : [expr [expr $time_2 - $time_1] % 60] Seconds"
+Elapsed time (Place step)= 0 Hours : 0 Minutes : 3 Seconds
+## write_checkpoint -force $outputDir/post_place.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5223 ; free virtual = 9957
+Wrote PlaceDB: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5222 ; free virtual = 9957
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5222 ; free virtual = 9957
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5221 ; free virtual = 9957
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5221 ; free virtual = 9957
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5221 ; free virtual = 9957
+Write Physdb Complete: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5221 ; free virtual = 9957
+INFO: [Common 17-1381] The checkpoint '/home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/post_place.dcp' has been generated.
+# source $COMPILE_SCRIPTS_DIR/post_place_physopt.tcl
+## set time_1 [clock seconds]
+## open_checkpoint $outputDir/post_place.dcp
+Command: open_checkpoint ../vivado-runs/post_place.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5224 ; free virtual = 9958
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5223 ; free virtual = 9958
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5220 ; free virtual = 9954
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5218 ; free virtual = 9952
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5218 ; free virtual = 9952
+Read PlaceDB: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5218 ; free virtual = 9952
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5218 ; free virtual = 9952
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5218 ; free virtual = 9952
+Read Physdb Files: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5218 ; free virtual = 9952
+Restored from archive | CPU: 0.070000 secs | Memory: 1.005287 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5218 ; free virtual = 9952
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5218 ; free virtual = 9952
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2024.2 (64-bit) build 5239630
+## set WNS [ get_property SLACK [get_timing_paths -max_paths 1 -nworst 1 -setup] ]
+## set NLOOPS 12
+## set TNS_PREV 0
+## set WNS_SRCH_STR "WNS="
+## set TNS_SRCH_STR "TNS="
+## if {$WNS < 0.000} {
+##     # add over constraining
+##     #set_clock_uncertainty 0.100 [get_clocks clkout0]
+##     set_clock_uncertainty 0.200 [get_clocks clkout0]
+##     #set_clock_uncertainty 0.300 [get_clocks clkout0]
+##     set TNS [ exec grep $TNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$TNS_SRCH_STR//p" | cut -d\  -f 1]
+##     set TNS_ITER_PREV $TNS
+## 
+##     for {set i 0} {$i < $NLOOPS} {incr i} {
+##         phys_opt_design -directive AggressiveExplore
+##         #phys_opt_design -shift_register_opt
+##         # get WNS / TNS by getting lines with the search string in it (grep),
+##         # get the last line only (tail -1),
+##         # extracting everything after the search string (sed), and
+##         # cutting just the first value out (cut). whew!
+##         set WNS [ exec grep $WNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$WNS_SRCH_STR//p" | cut -d\  -f 1]
+##         set TNS [ exec grep $TNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$TNS_SRCH_STR//p" | cut -d\  -f 1]
+##         if {($TNS == $TNS_PREV && $i > 0) || $WNS >= 0.000} {
+##             break
+##         }
+##         set TNS_PREV $TNS
+## 
+##         phys_opt_design -directive AggressiveFanoutOpt
+##         set WNS [ exec grep $WNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$WNS_SRCH_STR//p" | cut -d\  -f 1]
+##         set TNS [ exec grep $TNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$TNS_SRCH_STR//p" | cut -d\  -f 1]
+##         if {($TNS == $TNS_PREV && $i > 0) || $WNS >= 0.000} {
+##             break
+##         }
+##         set TNS_PREV $TNS
+## 
+##         phys_opt_design -directive AlternateReplication
+##         set WNS [ exec grep $WNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$WNS_SRCH_STR//p" | cut -d\  -f 1]
+##         set TNS [ exec grep $TNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$TNS_SRCH_STR//p" | cut -d\  -f 1]
+##         if {($TNS == $TNS_PREV) || $WNS >= 0.000} {
+##             break
+##         }
+##         set TNS_PREV $TNS
+## 
+##         if {($TNS_PREV == $TNS_ITER_PREV) || $WNS >= 0.000} {
+##             break
+##         }
+##     }
+## 
+##     # remove over constraining
+##     set_clock_uncertainty 0 [get_clocks clkout0]
+## 
+##     #phys_opt_design -directive AggressiveExplore
+##     #phys_opt_design -directive AlternateFlowWithRetiming
+## 
+## }
+## report_timing_summary -file $outputDir/post_place_physopt_tim.rpt
+WARNING: [Vivado 12-975] No timing paths matched 'get_timing_paths -max_paths 5000 -slack_lesser_than 0'.
+## report_design_analysis -logic_level_distribution \
+##                          -of_timing_paths [get_timing_paths -max_paths 5000 \
+##                            -slack_lesser_than 0] \
+##                              -file $outputDir/post_place_physopt_design_analysis.rpt
+## write_checkpoint -force $outputDir/post_place_physopt.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5218 ; free virtual = 9952
+Wrote PlaceDB: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5217 ; free virtual = 9952
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5217 ; free virtual = 9952
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5217 ; free virtual = 9952
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5217 ; free virtual = 9952
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5216 ; free virtual = 9952
+Write Physdb Complete: Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5216 ; free virtual = 9952
+INFO: [Common 17-1381] The checkpoint '/home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/post_place_physopt.dcp' has been generated.
+## set time_2 [clock seconds]
+## puts "Elapsed time (post_place_physopt step)= [expr [expr $time_2 - $time_1] / 3600] Hours : [expr [expr [expr $time_2 - $time_1] / 60] % 3600] Minutes : [expr [expr $time_2 - $time_1] % 60] Seconds"
+Elapsed time (post_place_physopt step)= 0 Hours : 0 Minutes : 2 Seconds
+# source $COMPILE_SCRIPTS_DIR/route.tcl
+## open_checkpoint $outputDir/post_place_physopt.dcp
+Command: open_checkpoint ../vivado-runs/post_place_physopt.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5217 ; free virtual = 9951
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3120.270 ; gain = 0.000 ; free physical = 5217 ; free virtual = 9951
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3132.125 ; gain = 1.000 ; free physical = 5167 ; free virtual = 9901
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.250 ; gain = 0.000 ; free physical = 5107 ; free virtual = 9842
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3196.250 ; gain = 0.000 ; free physical = 5107 ; free virtual = 9842
+Read PlaceDB: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3196.250 ; gain = 0.000 ; free physical = 5107 ; free virtual = 9842
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.250 ; gain = 0.000 ; free physical = 5107 ; free virtual = 9842
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3196.250 ; gain = 0.000 ; free physical = 5107 ; free virtual = 9842
+Read Physdb Files: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3196.250 ; gain = 0.000 ; free physical = 5107 ; free virtual = 9842
+Restored from archive | CPU: 0.060000 secs | Memory: 1.005287 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3196.250 ; gain = 0.000 ; free physical = 5107 ; free virtual = 9842
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3196.250 ; gain = 0.000 ; free physical = 5107 ; free virtual = 9842
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2024.2 (64-bit) build 5239630
+## set time_1 [clock seconds]
+## route_design -directive AggressiveExplore -tns_cleanup 
+Command: route_design -directive AggressiveExplore -tns_cleanup
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'AggressiveExplore'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: cdace4e4 ConstDB: 0 ShapeSum: d668eeae RouteDB: a0815c57
+Post Restoration Checksum: NetGraph: 55a215f5 | NumContArr: 5b6e7a20 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 23662854f
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 3336.930 ; gain = 130.773 ; free physical = 4965 ; free virtual = 9699
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 23662854f
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 3336.930 ; gain = 130.773 ; free physical = 4965 ; free virtual = 9699
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 23662854f
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 3336.930 ; gain = 130.773 ; free physical = 4965 ; free virtual = 9699
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 1d5b15233
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4946 ; free virtual = 9680
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.166  | TNS=0.000  | WHS=-0.359 | THS=-46.090|
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 1221
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 1221
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 1efef2778
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4937 ; free virtual = 9671
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 1efef2778
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4937 ; free virtual = 9671
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 1b0eb8c07
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4937 ; free virtual = 9671
+Phase 4 Initial Routing | Checksum: 1b0eb8c07
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4937 ; free virtual = 9671
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 65
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.108  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Global Iteration 0 | Checksum: 2e4894c27
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+
+Phase 5.2 Global Iteration 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.108  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.2 Global Iteration 1 | Checksum: 1fd142db5
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+Phase 5 Rip-up And Reroute | Checksum: 1fd142db5
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 TNS Cleanup
+
+Phase 6.1.1 Delay CleanUp
+Phase 6.1.1 Delay CleanUp | Checksum: 1fd142db5
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+Phase 6.1 TNS Cleanup | Checksum: 1fd142db5
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 1fd142db5
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+Phase 6 Delay and Skew Optimization | Checksum: 1fd142db5
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.187  | TNS=0.000  | WHS=0.056  | THS=0.000  |
+
+Phase 7.1 Hold Fix Iter | Checksum: 1b4020baf
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+Phase 7 Post Hold Fix | Checksum: 1b4020baf
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.321056 %
+  Global Horizontal Routing Utilization  = 0.356845 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: 1b4020baf
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 1b4020baf
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 1d10d679e
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4944 ; free virtual = 9678
+INFO: [Route 72-16] Aggressive Explore Summary
++======+=======+=====+=======+=====+========+==============+===================+
+| Pass |  WNS  | TNS |  WHS  | THS | Status | Elapsed Time | Solution Selected |
++======+=======+=====+=======+=====+========+==============+===================+
+|  1   | 4.187 |  -  | 0.056 |  -  |  Pass  |   00:00:01   |         x         |
+|  2   |   -   |  -  |   -   |  -  |  Skip  |   00:00:00   |                   |
++------+-------+-----+-------+-----+--------+--------------+-------------------+
+
+
+Phase 11 Post Process Routing
+Phase 11 Post Process Routing | Checksum: 1d10d679e
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4943 ; free virtual = 9677
+
+Phase 12 Post Router Timing
+INFO: [Route 35-20] Post Routing Timing Summary | WNS=4.192  | TNS=0.000  | WHS=0.056  | THS=0.000  |
+
+Phase 12 Post Router Timing | Checksum: 2109f6bb6
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4943 ; free virtual = 9677
+INFO: [Route 35-61] The design met the timing requirement.
+Total Elapsed time in route_design: 14.48 secs
+
+Phase 13 Post-Route Event Processing
+Phase 13 Post-Route Event Processing | Checksum: 1761e265f
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4943 ; free virtual = 9677
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 1761e265f
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 3362.930 ; gain = 156.773 ; free physical = 4943 ; free virtual = 9677
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+12 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 3362.930 ; gain = 166.680 ; free physical = 4943 ; free virtual = 9677
+## set time_2 [clock seconds]
+## puts "Elapsed time (Route step)= [expr [expr $time_2 - $time_1] / 3600] Hours : [expr [expr [expr $time_2 - $time_1] / 60] % 60] Minutes : [expr [expr $time_2 - $time_1] % 60] Seconds"
+Elapsed time (Route step)= 0 Hours : 0 Minutes : 14 Seconds
+## write_checkpoint -force $outputDir/post_route.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3362.930 ; gain = 0.000 ; free physical = 4949 ; free virtual = 9683
+Wrote PlaceDB: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3362.930 ; gain = 0.000 ; free physical = 4948 ; free virtual = 9683
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3362.930 ; gain = 0.000 ; free physical = 4948 ; free virtual = 9683
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3362.930 ; gain = 0.000 ; free physical = 4948 ; free virtual = 9683
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3362.930 ; gain = 0.000 ; free physical = 4948 ; free virtual = 9684
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3362.930 ; gain = 0.000 ; free physical = 4948 ; free virtual = 9684
+Write Physdb Complete: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3362.930 ; gain = 0.000 ; free physical = 4948 ; free virtual = 9684
+INFO: [Common 17-1381] The checkpoint '/home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/post_route.dcp' has been generated.
+# source $COMPILE_SCRIPTS_DIR/post_route.tcl
+## open_checkpoint $outputDir/post_route.dcp
+Command: open_checkpoint ../vivado-runs/post_route.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3362.930 ; gain = 0.000 ; free physical = 4946 ; free virtual = 9682
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3362.930 ; gain = 0.000 ; free physical = 4945 ; free virtual = 9681
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3362.930 ; gain = 0.000 ; free physical = 4945 ; free virtual = 9680
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3389.773 ; gain = 0.000 ; free physical = 4929 ; free virtual = 9665
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3389.773 ; gain = 0.000 ; free physical = 4929 ; free virtual = 9665
+Read PlaceDB: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3389.773 ; gain = 0.000 ; free physical = 4929 ; free virtual = 9665
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3389.773 ; gain = 0.000 ; free physical = 4929 ; free virtual = 9665
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3389.773 ; gain = 0.000 ; free physical = 4929 ; free virtual = 9665
+Read Physdb Files: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3389.773 ; gain = 0.000 ; free physical = 4929 ; free virtual = 9665
+Restored from archive | CPU: 0.090000 secs | Memory: 1.418205 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3389.773 ; gain = 0.000 ; free physical = 4929 ; free virtual = 9665
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3389.773 ; gain = 0.000 ; free physical = 4929 ; free virtual = 9665
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2024.2 (64-bit) build 5239630
+## set time_1 [clock seconds]
+## set WNS [ get_property SLACK [get_timing_paths -max_paths 1 -nworst 1 -setup] ]
+## if {$WNS < 0.000} {
+##   phys_opt_design -directive AggressiveExplore
+##   phys_opt_design -directive AlternateReplication
+##   phys_opt_design -directive Explore 
+##   phys_opt_design -directive AggressiveFanoutOpt
+## }
+## set WNS [ get_property SLACK [get_timing_paths -max_paths 1 -nworst 1 -setup] ]
+## set NLOOPS 12
+## set TNS_PREV 0
+## set WNS_SRCH_STR "WNS="
+## set TNS_SRCH_STR "TNS="
+## if {$WNS < 0.000} {
+## 
+##     set TNS [ exec grep $TNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$TNS_SRCH_STR//p" | cut -d\  -f 1]
+##     set TNS_ITER_PREV $TNS
+## 
+##     for {set i 0} {$i < $NLOOPS} {incr i} {
+##         phys_opt_design -directive AlternateReplication
+##         set WNS [ exec grep $WNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$WNS_SRCH_STR//p" | cut -d\  -f 1]
+##         set TNS [ exec grep $TNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$TNS_SRCH_STR//p" | cut -d\  -f 1]
+##         if {($TNS == $TNS_PREV && $i > 0) || $WNS >= 0.000} {
+##             break
+##         }
+##         set TNS_PREV $TNS
+## 
+##         phys_opt_design -directive AggressiveFanoutOpt
+##         set WNS [ exec grep $WNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$WNS_SRCH_STR//p" | cut -d\  -f 1]
+##         set TNS [ exec grep $TNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$TNS_SRCH_STR//p" | cut -d\  -f 1]
+##         if {($TNS == $TNS_PREV && $i > 0) || $WNS >= 0.000} {
+##             break
+##         }
+##         set TNS_PREV $TNS
+## 
+##         phys_opt_design -directive AggressiveExplore
+##         set WNS [ exec grep $WNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$WNS_SRCH_STR//p" | cut -d\  -f 1]
+##         set TNS [ exec grep $TNS_SRCH_STR vivado.log | tail -1 | sed -n -e "s/^.*$TNS_SRCH_STR//p" | cut -d\  -f 1]
+##         if {($TNS == $TNS_PREV) || $WNS >= 0.000} {
+##             break
+##         }
+##         set TNS_PREV $TNS
+## 
+##         if {($TNS_PREV == $TNS_ITER_PREV) || $WNS >= 0.000} {
+##             break
+##         }
+##     }
+## 
+## }
+## set time_2 [clock seconds]
+## puts "Elapsed time (Post Route step)= [expr [expr $time_2 - $time_1] / 3600] Hours : [expr [expr [expr $time_2 - $time_1] / 60] % 60] Minutes : [expr [expr $time_2 - $time_1] % 60] Seconds"
+Elapsed time (Post Route step)= 0 Hours : 0 Minutes : 0 Seconds
+## write_checkpoint -force $outputDir/post_route_physopt
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3392.742 ; gain = 2.969 ; free physical = 4925 ; free virtual = 9661
+Wrote PlaceDB: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3399.727 ; gain = 9.953 ; free physical = 4906 ; free virtual = 9643
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3399.727 ; gain = 0.000 ; free physical = 4906 ; free virtual = 9643
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3399.727 ; gain = 0.000 ; free physical = 4906 ; free virtual = 9643
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3399.727 ; gain = 0.000 ; free physical = 4906 ; free virtual = 9642
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3399.727 ; gain = 0.000 ; free physical = 4905 ; free virtual = 9642
+Write Physdb Complete: Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3399.727 ; gain = 9.953 ; free physical = 4905 ; free virtual = 9642
+INFO: [Common 17-1381] The checkpoint '/home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/post_route_physopt.dcp' has been generated.
+## report_timing_summary -file $outputDir/post_route_timing_summary.rpt
+## report_timing_summary -file $outputDir/post_route_timing_summary.rpt
+## report_timing -sort_by group -max_paths 100 -path_type summary -file $outputDir/post_route_timing.rpt
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 100 -nworst 1 -delay_type max -sort_by group.
+## report_pulse_width -file $outputDir/post_route_pulse_width.rpt
+## report_clock_utilization -file $outputDir/clock_util.rpt
+## report_utilization -hierarchical -file $outputDir/post_route_util.rpt
+## report_power -file $outputDir/post_route_power.rpt
+Command: report_power -file ../vivado-runs/post_route_power.rpt
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+## report_drc -file $outputDir/post_imp_drc.rpt
+Command: report_drc -file ../vivado-runs/post_imp_drc.rpt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/post_imp_drc.rpt.
+report_drc completed successfully
+# source $COMPILE_SCRIPTS_DIR/bitstream.tcl
+## set time_1 [clock seconds]
+## write_bitstream -force $outputDir/fpga_bitstream
+Command: write_bitstream -force ../vivado-runs/fpga_bitstream
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Bitstream compression saved 14696864 bits.
+Writing bitstream ../vivado-runs/fpga_bitstream.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+9 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 3876.961 ; gain = 345.578 ; free physical = 4437 ; free virtual = 9171
+## set time_2 [clock seconds]
+## puts "Elapsed time (Bitstream step)= [expr [expr $time_2 - $time_1] / 3600] Hours : [expr [expr [expr $time_2 - $time_1] / 60] % 60] Minutes : [expr [expr $time_2 - $time_1] % 60] Seconds"
+Elapsed time (Bitstream step)= 0 Hours : 0 Minutes : 11 Seconds
+# set time2 [clock seconds]
+# puts "Total Compilation time (Opt step)= [expr [expr $time2 - $time1] / 3600] Hours : [expr [expr [expr $time2 - $time1] / 60] % 60] Minutes : [expr [expr $time2 - $time1] % 60] Seconds"
+Total Compilation time (Opt step)= 0 Hours : 1 Minutes : 22 Seconds
+INFO: [Common 17-206] Exiting Vivado at Thu May 15 21:41:43 2025...

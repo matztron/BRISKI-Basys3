@@ -30,7 +30,7 @@ module RISCV_core_top_extended #(
     input logic i_core_grant
 );
   // Attribute to keep hierarchy
-  (* keep_hierarchy = "false" *)
+  (* keep_hierarchy = "true" *)
 
   // Instruction mem signals
   logic [31:0] rom_data ;

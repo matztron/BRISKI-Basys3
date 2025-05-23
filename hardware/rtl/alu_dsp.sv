@@ -220,7 +220,7 @@ module alu_dsp #(
    //          Virtex UltraScale+
    // Xilinx HDL Language Template, version 2022.1
 
-DSP48E2 #(
+/*DSP48E2 #(
       // Feature Control Attributes: Data Path Selection
       .AMULTSEL("A"),                    // Selects A input to multiplier (A, AD)
       .A_INPUT("DIRECT"),                // Selects A input source, "DIRECT" (A port) or "CASCADE" (ACIN port)
@@ -331,9 +331,104 @@ DSP48E2 #(
       .RSTINMODE(0),           // 1-bit input: Reset for INMODEREG
       .RSTM(0),                     // 1-bit input: Reset for MREG
       .RSTP(0)                      // 1-bit input: Reset for PREG
-   );
+   );*/
 
-   // End of DSP48E2_inst instantiation
+   // DSP48E1: 48-bit Multi-Functional Arithmetic Block
+//          7 Series
+// Xilinx HDL Language Template, version 2024.2
+
+  DSP48E1 #(
+    // Feature Control Attributes: Data Path Selection
+    .A_INPUT("DIRECT"),
+    .B_INPUT("DIRECT"),
+    .USE_DPORT("FALSE"),
+    .USE_MULT("MULTIPLY"),
+    .USE_SIMD("ONE48"),
+    // Pattern Detector Attributes
+    .AUTORESET_PATDET("NO_RESET"),
+    .MASK(48'h3fffffffffff),
+    .PATTERN(48'h000000000000),
+    .SEL_MASK("MASK"),
+    .SEL_PATTERN("PATTERN"),
+    .USE_PATTERN_DETECT("NO_PATDET"),
+    // Register Control Attributes
+    .ACASCREG(1),
+    .ADREG(1),
+    .ALUMODEREG(1),
+    .AREG(1),
+    .BCASCREG(1),
+    .BREG(1),
+    .CARRYINREG(1),
+    .CARRYINSELREG(1),
+    .CREG(1),
+    .DREG(1),
+    .INMODEREG(1),
+    .MREG(1),
+    .OPMODEREG(1),
+    .PREG(1)
+  ) DSP48E1_inst (
+    // Cascade Outputs
+    .ACOUT(ACOUT),
+    .BCOUT(BCOUT),
+    .CARRYCASCOUT(CARRYCASCOUT),
+    .MULTSIGNOUT(MULTSIGNOUT),
+    .PCOUT(PCOUT),
+    // Status Outputs
+    .OVERFLOW(OVERFLOW),
+    .PATTERNBDETECT(PATTERNBDETECT),
+    .PATTERNDETECT(PATTERNDETECT),
+    .UNDERFLOW(UNDERFLOW),
+    // Data Outputs
+    .CARRYOUT(CARRYOUT),
+    .P(P),
+    // Cascade Inputs
+    .ACIN(ACIN),
+    .BCIN(BCIN),
+    .CARRYCASCIN(CARRYCASCIN),
+    .MULTSIGNIN(MULTSIGNIN),
+    .PCIN(PCIN),
+    // Control Inputs
+    .ALUMODE(ALUMODE),
+    .CARRYINSEL(CARRYINSEL),
+    .CLK(CLK),
+    .INMODE(INMODE),
+    .OPMODE(OPMODE),
+    // Data Inputs
+    .A(A),
+    .B(B),
+    .C(C),
+    .CARRYIN(CARRYIN),
+    .D(D),
+    // Clock Enables
+    .CEA1(CEA1),
+    .CEA2(CEA2),
+    .CEAD(CEAD),
+    .CEALUMODE(CEALUMODE),
+    .CEB1(CEB1),
+    .CEB2(CEB2),
+    .CEC(CEC),
+    .CECARRYIN(CECARRYIN),
+    .CECTRL(CECTRL),
+    .CED(CED),
+    .CEINMODE(CEINMODE),
+    .CEM(CEM),
+    .CEP(CEP),
+    // Resets
+    .RSTA(RSTA),
+    .RSTALLCARRYIN(RSTALLCARRYIN),
+    .RSTALUMODE(RSTALUMODE),
+    .RSTB(RSTB),
+    .RSTC(RSTC),
+    .RSTCTRL(RSTCTRL),
+    .RSTD(RSTD),
+    .RSTINMODE(RSTINMODE),
+    .RSTM(RSTM),
+    .RSTP(RSTP)
+  );
+
+  // End of DSP48E1_inst instantiation
+
+  // End of DSP48E2_inst instantiation
 					
 endmodule
 

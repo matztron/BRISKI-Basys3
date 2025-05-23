@@ -1,0 +1,7 @@
+set_property SRC_FILE_INFO {cfile:/home/matthias/fpga_projects/BRISKI-Basys3/hardware/vivado-impl/usr-constraints/basys3.xdc rfile:../../usr-constraints/basys3.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports REFCLK_P]
+set_property src_info {type:XDC file:1 line:12 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN V17   IOSTANDARD LVCMOS33 } [get_ports {reset}]
+set_property src_info {type:XDC file:1 line:32 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN U16   IOSTANDARD LVCMOS33 } [get_ports {DONE_GPIO_LED_0}]

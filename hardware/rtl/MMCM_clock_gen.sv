@@ -55,11 +55,17 @@ module MMCM_clock_gen #(
     logic CLKFBOUT;
     logic clkout0;
 
-    localparam int Dval = DeriveMasterDiv(MMCM_OUT_FREQ);
+    /*localparam int Dval = DeriveMasterDiv(MMCM_OUT_FREQ);
     localparam real Mval = DeriveMasterMult(MMCM_OUT_FREQ);
-    localparam real Oval = DeriveOutDiv(MMCM_OUT_FREQ);
+    localparam real Oval = DeriveOutDiv(MMCM_OUT_FREQ);*/
+    // Just use the 100MHz of Basys for now
+    localparam int Dval = 1;
+    localparam real Mval = 10;
+    localparam real Oval = 10;
+
     // MMCME4_BASE instantiation
-    MMCME4_BASE #(
+    // THIS MIGHT HAVE TO BE CHANGED TO: "MMCME2_BASE" as MMCME4_BASE MIGHT BE ULTRASCALE SPECIFIC
+    /*MMCME4_BASE #(
         .BANDWIDTH("OPTIMIZED"),   // Jitter programming (HIGH, LOW, OPTIMIZED)
         .CLKFBOUT_MULT_F(Mval),     // Multiply value for all CLKOUT (2.000-64.000) (M counter)
         .CLKFBOUT_PHASE(0.0),      // Phase offset in degrees of CLKFB (-360.000-360.000)
@@ -112,6 +118,62 @@ module MMCM_clock_gen #(
         .PWRDWN(1'b0),         // 1-bit input: Power-down
         .RST(ASYNC_RESET),     // 1-bit input: Reset
         .CLKFBIN(CLKFBOUT)     // 1-bit input: Feedback clock
+    );*/
+    MMCME2_BASE #(
+        .BANDWIDTH("OPTIMIZED"),        // Jitter programming
+        .CLKFBOUT_MULT_F(Mval),         // M counter
+        .CLKFBOUT_PHASE(0.0),
+        .CLKIN1_PERIOD(8),              // Input clock period in ns
+
+        .CLKOUT0_DIVIDE_F(Oval),        // O counter (fractional)
+        .CLKOUT1_DIVIDE(1),
+        .CLKOUT2_DIVIDE(1),
+        .CLKOUT3_DIVIDE(1),
+        .CLKOUT4_DIVIDE(1),
+        .CLKOUT5_DIVIDE(1),
+        .CLKOUT6_DIVIDE(1),
+
+        .CLKOUT0_DUTY_CYCLE(0.5),
+        .CLKOUT1_DUTY_CYCLE(0.5),
+        .CLKOUT2_DUTY_CYCLE(0.5),
+        .CLKOUT3_DUTY_CYCLE(0.5),
+        .CLKOUT4_DUTY_CYCLE(0.5),
+        .CLKOUT5_DUTY_CYCLE(0.5),
+        .CLKOUT6_DUTY_CYCLE(0.5),
+
+        .CLKOUT0_PHASE(0.0),
+        .CLKOUT1_PHASE(0.0),
+        .CLKOUT2_PHASE(0.0),
+        .CLKOUT3_PHASE(0.0),
+        .CLKOUT4_PHASE(0.0),
+        .CLKOUT5_PHASE(0.0),
+        .CLKOUT6_PHASE(0.0),
+
+        .CLKOUT4_CASCADE("FALSE"),
+        .DIVCLK_DIVIDE(Dval),           // D counter
+        .REF_JITTER1(0.0),
+        .STARTUP_WAIT("FALSE")
+    ) MMCME2_BASE_inst (
+        .CLKOUT0(clkout0),        // Primary output
+        .CLKOUT0B(),              // Not used
+        .CLKOUT1(),               // Not used
+        .CLKOUT1B(),              // Not used
+        .CLKOUT2(),               // Not used
+        .CLKOUT2B(),              // Not used
+        .CLKOUT3(),               // Not used
+        .CLKOUT3B(),              // Not used
+        .CLKOUT4(),               // Not used
+        .CLKOUT5(),               // Not used
+        .CLKOUT6(),               // Not used
+
+        .CLKFBOUT(CLKFBOUT),      // Feedback clock
+        .CLKFBOUTB(),             // Not used
+        .LOCKED(LOCKED),          // Lock status
+
+        .CLKIN1(CLKIN1),          // Clock input
+        .PWRDWN(1'b0),            // Always enabled
+        .RST(ASYNC_RESET),        // Reset
+        .CLKFBIN(CLKFBOUT)        // Feedback loop
     );
 
     BUFG clkout0_gbuf (

@@ -1,0 +1,45 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Fri May 23 12:40:54 2025
+| Host         : debian running 64-bit Debian GNU/Linux 12 (bookworm)
+| Command      : report_pulse_width -file ../vivado-runs/post_route_pulse_width.rpt
+| Design       : core_dummy_wrapper
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Pulse Width Report
+
+Clock Name:         CLKFBOUT
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKFBOUT }
+
+Check Type  Corner  Lib Pin              Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            1.249         10.000      8.751      MMCME2_ADV_X1Y0  MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKFBOUT
+Max Period  n/a     MMCME2_ADV/CLKFBIN   n/a            100.000       10.000      90.000     MMCME2_ADV_X1Y0  MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKFBIN
+
+Clock Name:         clkout0
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKOUT0 }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB18_X0Y2      RISCV_core_inst/register_file_vec_inst/regfile_bot_inst/MEM_reg/CLKARDCLK
+Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       10.000      203.360    MMCME2_ADV_X1Y0  MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKOUT0
+Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         5.000       3.750      SLICE_X2Y7       RISCV_core_inst/reg_program_counter_inst/PC_MEM_INST/MEM_reg_0_15_0_5/RAMA/CLK
+High Pulse Width  Slow    RAMD32/CLK          n/a            1.250         5.000       3.750      SLICE_X2Y7       RISCV_core_inst/reg_program_counter_inst/PC_MEM_INST/MEM_reg_0_15_0_5/RAMA/CLK
+
+Clock Name:         sys_clk_pin
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { REFCLK_P }
+
+Check Type        Corner  Lib Pin            Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     MMCME2_ADV/CLKIN1  n/a            1.249         10.000      8.751      MMCME2_ADV_X1Y0  MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKIN1
+Max Period        n/a     MMCME2_ADV/CLKIN1  n/a            100.000       10.000      90.000     MMCME2_ADV_X1Y0  MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKIN1
+Low Pulse Width   Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKIN1
+High Pulse Width  Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  MMCM_clock_gen_inst/MMCME2_BASE_inst/CLKIN1
+

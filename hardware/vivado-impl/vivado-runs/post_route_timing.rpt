@@ -1,0 +1,319 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Fri May 23 12:40:54 2025
+| Host         : debian running 64-bit Debian GNU/Linux 12 (bookworm)
+| Command      : report_timing -sort_by group -max_paths 100 -path_type summary -file ../vivado-runs/post_route_timing.rpt
+| Design       : core_dummy_wrapper
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Startpoint                     Endpoint                       Slack(ns)     
+----------------------------------------------------------------------------
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[27]/D
+                                                              4.192         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[25]/D
+                                                              4.338         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[28]/D
+                                                              4.395         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[3]/D
+                                                              4.404         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][1]/D
+                                                              4.407         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][22]/D
+                                                              4.462         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][0]/D
+                                                              4.468         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[6]/D
+                                                              4.482         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][11]/D
+                                                              4.511         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[4]/D
+                                                              4.536         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[22]/D
+                                                              4.560         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[23]/D
+                                                              4.607         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[22]/D
+                                                              4.620         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][4]/D
+                                                              4.640         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[8]/D
+                                                              4.690         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[21]/D
+                                                              4.691         
+RISCV_core_inst/funct3_reg2_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[3][1]/C
+                               RISCV_core_inst/dmem_data_pipe_inst/without_reset.n_is_1.pipeline_stages_reg[0][0]/R
+                                                              4.710         
+RISCV_core_inst/funct3_reg2_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[3][1]/C
+                               RISCV_core_inst/dmem_data_pipe_inst/without_reset.n_is_1.pipeline_stages_reg[0][1]/R
+                                                              4.710         
+RISCV_core_inst/funct3_reg2_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[3][1]/C
+                               RISCV_core_inst/dmem_data_pipe_inst/without_reset.n_is_1.pipeline_stages_reg[0][2]/R
+                                                              4.710         
+RISCV_core_inst/funct3_reg2_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[3][1]/C
+                               RISCV_core_inst/dmem_data_pipe_inst/without_reset.n_is_1.pipeline_stages_reg[0][4]/R
+                                                              4.710         
+RISCV_core_inst/funct3_reg2_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[3][1]/C
+                               RISCV_core_inst/dmem_data_pipe_inst/without_reset.n_is_1.pipeline_stages_reg[0][6]/R
+                                                              4.710         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[26]/D
+                                                              4.743         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[2]/D
+                                                              4.765         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[29]/D
+                                                              4.766         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][24]/D
+                                                              4.828         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[29]/D
+                                                              4.847         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[10]/D
+                                                              4.855         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][20]/D
+                                                              4.863         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][18]/D
+                                                              4.865         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][19]/D
+                                                              4.871         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][16]/D
+                                                              4.892         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[2]/D
+                                                              4.895         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[9]/D
+                                                              4.898         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][2]/D
+                                                              4.900         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[5]/D
+                                                              4.917         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[24]/D
+                                                              4.923         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[26]/D
+                                                              4.926         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][17]/D
+                                                              4.935         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[5]/D
+                                                              4.937         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[15]/D
+                                                              4.945         
+instr_and_data_mem/RAM_reg/CLKBWRCLK
+                               RISCV_core_inst/load_unit_inst/second_stage_registered.o_dmem_post_reg[24]/D
+                                                              4.977         
+instr_and_data_mem/RAM_reg/CLKBWRCLK
+                               RISCV_core_inst/load_unit_inst/second_stage_registered.o_dmem_post_reg[25]/D
+                                                              4.993         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[6]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[0]/D
+                                                              5.029         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][3]/D
+                                                              5.041         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[7]/D
+                                                              5.042         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/third_stage_registered.o_result_reg[2]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_valid_reg/D
+                                                              5.049         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/ALUOp_reg_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[0][0]/D
+                                                              5.050         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[20]/D
+                                                              5.058         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/ALUOp_reg_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[0][3]/D
+                                                              5.059         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[0]/CE
+                                                              5.064         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[1]/CE
+                                                              5.064         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[5]/CE
+                                                              5.064         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[6]/CE
+                                                              5.064         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[16]/D
+                                                              5.100         
+RISCV_core_inst/funct3_reg2_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[3][1]/C
+                               RISCV_core_inst/dmem_data_pipe_inst/without_reset.n_is_1.pipeline_stages_reg[0][3]/R
+                                                              5.101         
+RISCV_core_inst/funct3_reg2_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[3][1]/C
+                               RISCV_core_inst/dmem_data_pipe_inst/without_reset.n_is_1.pipeline_stages_reg[0][5]/R
+                                                              5.101         
+RISCV_core_inst/funct3_reg2_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[3][1]/C
+                               RISCV_core_inst/dmem_data_pipe_inst/without_reset.n_is_1.pipeline_stages_reg[0][7]/R
+                                                              5.101         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][23]/D
+                                                              5.113         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[30]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[18]/D
+                                                              5.113         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[10]/CE
+                                                              5.115         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[11]/CE
+                                                              5.115         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[2]/CE
+                                                              5.115         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[3]/CE
+                                                              5.115         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[4]/CE
+                                                              5.115         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[7]/CE
+                                                              5.115         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[8]/CE
+                                                              5.115         
+RISCV_core_inst/thread_index_stage_reg[9][0]/C
+                               RISCV_core_inst/reservation_set_inst/registered_reservation_set.reserved_address_reg[9]/CE
+                                                              5.115         
+instr_and_data_mem/RAM_reg/CLKBWRCLK
+                               RISCV_core_inst/load_unit_inst/second_stage_registered.o_dmem_post_reg[22]/D
+                                                              5.138         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[9]/D
+                                                              5.149         
+instr_and_data_mem/RAM_reg/CLKBWRCLK
+                               RISCV_core_inst/load_unit_inst/second_stage_registered.o_dmem_post_reg[23]/D
+                                                              5.158         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[6]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[31]/D
+                                                              5.158         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[24]/D
+                                                              5.171         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[3]/D
+                                                              5.172         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][21]/D
+                                                              5.181         
+instr_and_data_mem/RAM_reg/CLKBWRCLK
+                               RISCV_core_inst/load_unit_inst/second_stage_registered.o_dmem_post_reg[20]/D
+                                                              5.197         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][25]/D
+                                                              5.214         
+instr_and_data_mem/RAM_reg/CLKBWRCLK
+                               RISCV_core_inst/load_unit_inst/second_stage_registered.o_dmem_post_reg[21]/D
+                                                              5.217         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/ALUOp_reg_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[0][1]/D
+                                                              5.218         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[14]/D
+                                                              5.227         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][5]/D
+                                                              5.234         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/ALUOp_reg_inst/without_reset.n_is_greater_than_2.pipeline_stages_reg[0][2]/D
+                                                              5.238         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[30]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[16]/D
+                                                              5.266         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[27]/D
+                                                              5.279         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[17]/D
+                                                              5.295         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[4]/D
+                                                              5.299         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[7]/D
+                                                              5.308         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[12]/D
+                                                              5.320         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[25]/D
+                                                              5.337         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[28]/D
+                                                              5.357         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[30]/D
+                                                              5.357         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[6]/D
+                                                              5.368         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[20]/D
+                                                              5.372         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/imm_reg_inst/without_reset.n_is_2.pipeline_stages_reg[0][14]/D
+                                                              5.384         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[31]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[19]/D
+                                                              5.384         
+instr_and_data_mem/RAM_reg/CLKARDCLK
+                               RISCV_core_inst/brmuxsel_reg_inst/with_reset.n_is_greater_than_2_reset.pipeline_stages_reg[0][0]/D
+                                                              5.388         
+instr_and_data_mem/RAM_reg/CLKBWRCLK
+                               RISCV_core_inst/load_unit_inst/second_stage_registered.o_dmem_post_reg[28]/D
+                                                              5.401         
+instr_and_data_mem/RAM_reg/CLKBWRCLK
+                               RISCV_core_inst/load_unit_inst/second_stage_registered.o_dmem_post_reg[29]/D
+                                                              5.416         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.first_registered_left_right_shifts_shared_logic.swapped_op1_reg[30]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[15]/D
+                                                              5.421         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_srl_sra_reg[21]/D
+                                                              5.426         
+RISCV_core_inst/alu_dsp_enabled.ALU_inst/first_stage_registered.shamt_reg[4]/C
+                               RISCV_core_inst/alu_dsp_enabled.ALU_inst/second_stage_registered.second_registered_left_right_shifts_shared_logic.result_sll_reg[8]/D
+                                                              5.451         
+
+
+

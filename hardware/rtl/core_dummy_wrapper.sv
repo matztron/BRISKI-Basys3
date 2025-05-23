@@ -58,11 +58,13 @@ module core_dummy_wrapper #(
       .LOCKED(locked)
   );
 
-  IBUFDS input_buf_clock (
+  // Basys3 does not have a differential clock!
+  assign ibuf_clk = REFCLK_P;
+  /*IBUFDS input_buf_clock (
       .O (ibuf_clk),
       .I (REFCLK_P),
       .IB(REFCLK_N)
-  );
+  );*/
 
   //=======================================================
   //=========      ASYNC RESET synchronizer    ===========

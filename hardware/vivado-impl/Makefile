@@ -26,7 +26,8 @@ ENABLE_ALU_DSP?=true
 ENABLE_BRAM_REGFILE?=true
 ENABLE_UNIFIED_BARREL_SHIFTER?=true
 
-FPGA_PART?=xcvu9p-flga2104-2L-e
+#FPGA_PART?=xcvu9p-flga2104-2L-e
+FPGA_PART?=xc7a35tcpg236-1
 
 TOP_RTL?=core_dummy_wrapper
 #TOP_RTL?=RISCV_core_top

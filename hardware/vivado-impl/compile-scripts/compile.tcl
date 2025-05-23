@@ -70,3 +70,4 @@ source $COMPILE_SCRIPTS_DIR/bitstream.tcl
 set time2 [clock seconds]
 puts "Total Compilation time (Opt step)= [expr [expr $time2 - $time1] / 3600] Hours : [expr [expr [expr $time2 - $time1] / 60] % 60] Minutes : [expr [expr $time2 - $time1] % 60] Seconds"
 
+

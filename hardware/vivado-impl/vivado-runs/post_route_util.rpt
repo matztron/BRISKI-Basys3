@@ -1,0 +1,94 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Fri May 23 12:40:55 2025
+| Host         : debian running 64-bit Debian GNU/Linux 12 (bookworm)
+| Command      : report_utilization -hierarchical -file ../vivado-runs/post_route_util.rpt
+| Design       : core_dummy_wrapper
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-----------------------------------+------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+|              Instance             |            Module            | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP Blocks |
++-----------------------------------+------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+| core_dummy_wrapper                |                        (top) |        449 |        381 |       8 |   60 | 858 |      1 |      2 |          1 |
+|   (core_dummy_wrapper)            |                        (top) |          0 |          0 |       0 |    0 |   8 |      0 |      0 |          0 |
+|   MMCM_clock_gen_inst             |               MMCM_clock_gen |          1 |          1 |       0 |    0 |   0 |      0 |      0 |          0 |
+|   RISCV_core_inst                 |                   RISCV_core |        381 |        313 |       8 |   60 | 847 |      0 |      2 |          1 |
+|     (RISCV_core_inst)             |                   RISCV_core |         10 |          2 |       0 |    8 |  26 |      0 |      0 |          0 |
+|     ALUOp_reg_inst                |    pipe_vec__parameterized10 |          2 |          2 |       0 |    0 |  16 |      0 |      0 |          0 |
+|     Adder32_inst                  |                      Adder32 |          1 |          1 |       0 |    0 |   0 |      0 |      0 |          0 |
+|     Mem_pipe_inst                 |      pipe_sl__parameterized9 |          0 |          0 |       0 |    0 |   1 |      0 |      0 |          0 |
+|     PCSel_reg_inst                |      pipe_sl__parameterized5 |          0 |          0 |       0 |    0 |   1 |      0 |      0 |          0 |
+|     WBSel_pipe_inst               |    pipe_vec__parameterized18 |          2 |          0 |       0 |    2 |   4 |      0 |      0 |          0 |
+|     alu_dsp_enabled.ALU_inst      |                      alu_dsp |        142 |        142 |       0 |    0 | 119 |      0 |      0 |          1 |
+|     alu_result_reg_mem2_inst      |    pipe_vec__parameterized11 |         19 |          7 |       0 |   12 |  36 |      0 |      0 |          0 |
+|     alu_result_reg_mem_inst       |                     pipe_vec |          1 |          1 |       0 |    0 |  12 |      0 |      0 |          0 |
+|     alu_result_reg_wb_inst        |                   pipe_vec_0 |          0 |          0 |       0 |    0 |  32 |      0 |      0 |          0 |
+|     aluop1_reg_inst               |                   pipe_vec_1 |          0 |          0 |       0 |    0 |  32 |      0 |      0 |          0 |
+|     aluop1sel_reg_inst            |      pipe_sl__parameterized0 |          0 |          0 |       0 |    0 |   3 |      0 |      0 |          0 |
+|     aluop2_reg_inst               |                   pipe_vec_2 |          0 |          0 |       0 |    0 |  32 |      0 |      0 |          0 |
+|     aluop2sel_reg_inst            |    pipe_sl__parameterized0_3 |          0 |          0 |       0 |    0 |   3 |      0 |      0 |          0 |
+|     br_signed_reg_inst            |      pipe_sl__parameterized4 |          0 |          0 |       0 |    0 |   4 |      0 |      0 |          0 |
+|     branch_logic_inst             |                 branch_logic |          3 |          3 |       0 |    0 |   9 |      0 |      0 |          0 |
+|     brmuxsel_reg_inst             |      pipe_sl__parameterized1 |          0 |          0 |       0 |    0 |   3 |      0 |      0 |          0 |
+|     dmem_data_pipe_inst           |                   pipe_vec_4 |          1 |          1 |       0 |    0 |  32 |      0 |      0 |          0 |
+|     dmem_we_pipe_inst             |    pipe_vec__parameterized15 |          1 |          1 |       0 |    0 |   4 |      0 |      0 |          0 |
+|     funct3_reg2_inst              |     pipe_vec__parameterized8 |          4 |          4 |       0 |    0 |   9 |      0 |      0 |          0 |
+|     funct3_reg_inst               |   pipe_vec__parameterized8_5 |          3 |          0 |       0 |    3 |   0 |      0 |      0 |          0 |
+|     funt3_reg3_inst               |    pipe_vec__parameterized16 |         18 |         18 |       0 |    0 |   9 |      0 |      0 |          0 |
+|     imm_reg_inst                  |     pipe_vec__parameterized6 |          0 |          0 |       0 |    0 |  64 |      0 |      0 |          0 |
+|     imm_reg_inst1                 |                   pipe_vec_6 |          0 |          0 |       0 |    0 |  32 |      0 |      0 |          0 |
+|     instr_reg_inst                |                   pipe_vec_7 |          0 |          0 |       0 |    0 |   0 |      0 |      0 |          0 |
+|     is_branch_reg_inst            |      pipe_sl__parameterized2 |          0 |          0 |       0 |    0 |   4 |      0 |      0 |          0 |
+|     is_jump_reg_inst              |      pipe_sl__parameterized3 |          1 |          0 |       0 |    1 |   2 |      0 |      0 |          0 |
+|     is_slt_op_reg_inst            |    pipe_sl__parameterized2_8 |          0 |          0 |       0 |    0 |   4 |      0 |      0 |          0 |
+|     jalr_clr_lsb_reg_inst         |      pipe_sl__parameterized6 |          1 |          0 |       0 |    1 |   1 |      0 |      0 |          0 |
+|     load_pipe_inst                |     pipe_sl__parameterized10 |          2 |          1 |       0 |    1 |   2 |      0 |      0 |          0 |
+|     load_unit_inst                |                    load_unit |          0 |          0 |       0 |    0 |  32 |      0 |      0 |          0 |
+|     lr_pipe_inst                  |      pipe_sl__parameterized7 |          2 |          1 |       0 |    1 |   2 |      0 |      0 |          0 |
+|     mux2to1_aluop1_inst           |      mux2to1__parameterized0 |          6 |          6 |       0 |    0 |   0 |      0 |      0 |          0 |
+|     mux2to1_aluop2_inst           |    mux2to1__parameterized0_9 |         16 |         16 |       0 |    0 |   0 |      0 |      0 |          0 |
+|     mux2to1_br_inputs_inst        |   mux2to1__parameterized0_10 |         16 |         16 |       0 |    0 |   0 |      0 |      0 |          0 |
+|     mux4to1_WB_inst               |                      mux4to1 |         23 |         23 |       0 |    0 |   0 |      0 |      0 |          0 |
+|     mux4to1_WB_pipe_inst          |                  pipe_vec_11 |          0 |          0 |       0 |    0 |  32 |      0 |      0 |          0 |
+|     pcplusfour_pipe_inst          |    pipe_vec__parameterized13 |          8 |          0 |       0 |    8 |  13 |      0 |      0 |          0 |
+|     pcplusfour_reg_inst           |    pipe_vec__parameterized12 |          0 |          0 |       0 |    0 |  13 |      0 |      0 |          0 |
+|     pcreg_pipe2_inst              | pipe_vec__parameterized11_12 |          0 |          0 |       0 |    0 |  36 |      0 |      0 |          0 |
+|     pcreg_pipe_inst               |     pipe_vec__parameterized7 |          0 |          0 |       0 |    0 |  60 |      0 |      0 |          0 |
+|     pipe_slt_and_not_sc_succ_inst |   pipe_sl__parameterized4_13 |          0 |          0 |       0 |    0 |   4 |      0 |      0 |          0 |
+|     pre_mem_pipe_inst             |   pipe_sl__parameterized7_14 |          1 |          0 |       0 |    1 |   2 |      0 |      0 |          0 |
+|     rd1_reg2_inst                 |                  pipe_vec_15 |         12 |         12 |       0 |    0 |  32 |      0 |      0 |          0 |
+|     rd2_or_imm_reg_inst           |                  pipe_vec_16 |         17 |         17 |       0 |    0 |  32 |      0 |      0 |          0 |
+|     rd2_reg2_inst                 | pipe_vec__parameterized13_17 |         44 |         28 |       0 |   16 |  32 |      0 |      0 |          0 |
+|     reg_program_counter_inst      |                    pcreg_vec |         15 |          7 |       8 |    0 |  21 |      0 |      0 |          0 |
+|       (reg_program_counter_inst)  |                    pcreg_vec |          7 |          7 |       0 |    0 |  21 |      0 |      0 |          0 |
+|       PC_MEM_INST                 |                      LUT_RAM |          8 |          0 |       8 |    0 |   0 |      0 |      0 |          0 |
+|     regfile_wa_pipe_inst          |    pipe_vec__parameterized17 |          4 |          0 |       0 |    4 |   5 |      0 |      0 |          0 |
+|     regfile_we_pipe_inst          |     pipe_sl__parameterized11 |          1 |          0 |       0 |    1 |   2 |      0 |      0 |          0 |
+|     register_file_vec_inst        |                  regfile_vec |          0 |          0 |       0 |    0 |   0 |      0 |      2 |          0 |
+|       regfile_bot_inst            |                     BRAM_SDP |          0 |          0 |       0 |    0 |   0 |      0 |      1 |          0 |
+|       regfile_top_inst            |                  BRAM_SDP_21 |          0 |          0 |       0 |    0 |   0 |      0 |      1 |          0 |
+|     reservation_set_inst          |              reservation_set |          5 |          5 |       0 |    0 |  18 |      0 |      0 |          0 |
+|     rs1_reg_inst                  |     pipe_vec__parameterized5 |          0 |          0 |       0 |    0 |   5 |      0 |      0 |          0 |
+|     rs2_reg_inst                  |  pipe_vec__parameterized5_18 |          0 |          0 |       0 |    0 |   5 |      0 |      0 |          0 |
+|     sc_pipe2_inst                 |   pipe_sl__parameterized9_19 |          0 |          0 |       0 |    0 |   1 |      0 |      0 |          0 |
+|     sc_pipe_inst                  |   pipe_sl__parameterized7_20 |          1 |          0 |       0 |    1 |   2 |      0 |      0 |          0 |
+|     slt_reg_inst                  |      pipe_sl__parameterized8 |          1 |          1 |       0 |    0 |   2 |      0 |      0 |          0 |
+|   instr_and_data_mem              |                         BRAM |         67 |         67 |       0 |    0 |   0 |      1 |      0 |          0 |
+|   sync_reset_gen_inst             |     async_reset_synchronizer |          0 |          0 |       0 |    0 |   3 |      0 |      0 |          0 |
++-----------------------------------+------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

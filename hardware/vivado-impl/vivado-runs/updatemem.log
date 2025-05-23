@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# updatemem v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu May 15 21:22:04 2025
+# Process ID         : 322800
+# Current directory  : /home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs
+# Command line       : updatemem -mode batch -source /tools/Xilinx/Vivado/2024.2/scripts/updatemem/main.tcl -notrace -tclargs -meminfo briski.mmi -data sparkle-template-mandelbrot.mem -proc instr_and_data_mem/RAM_reg -bit fpga_bitstream.bit -out updated_fpga_bitstream.bit -force
+# Log file           : /home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/updatemem.log
+# Journal file       : /home/matthias/fpga_projects/BRISKI/hardware/vivado-impl/vivado-runs/updatemem.jou
+# Running On         : debian
+# Platform           : Debian
+# Operating System   : Debian GNU/Linux 12 (bookworm)
+# Processor Detail   : AMD Ryzen 5 3600 6-Core Processor
+# CPU Frequency      : 2745.567 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16707 MB
+# Swap memory        : 1022 MB
+# Total Virtual      : 17730 MB
+# Available Virtual  : 12548 MB
+#-----------------------------------------------------------
+source /tools/Xilinx/Vivado/2024.2/scripts/updatemem/main.tcl -notrace
+Command: update_mem -meminfo briski.mmi -data sparkle-template-mandelbrot.mem -proc instr_and_data_mem/RAM_reg -bit fpga_bitstream.bit -out updated_fpga_bitstream.bit -force
+0 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+update_mem failed
+ERROR: [Updatemem 57-143] Cannot create updated bitstream. Device mismatch detected between input bit(xc7a35t) and mmi(xcvu9p) files.
+
+INFO: [Common 17-206] Exiting updatemem at Thu May 15 21:22:06 2025...
